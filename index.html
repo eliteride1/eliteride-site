@@ -1,607 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EliteRide – Your Executive Chauffeur Service</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteRide - Executive Chauffeur Service</title>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
         body {
             margin: 0;
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            color: #f0d18a;
+            font-family: 'Helvetica Neue', sans-serif;
             background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
         }
         header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(240, 209, 138, 0.12);
-        }
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 10px 20px;
+            background-color: #111;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-        }
-        .logo-wrap {
-            display: flex;
             align-items: center;
-            gap: 10px;
+            padding: 20px 50px;
         }
-        .logo-wrap img {
-            height: 40px;
-            width: auto;
-            border-radius: 6px;
-        }
-        .logo-text {
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            font-size: 0.9rem;
+        header img {
+            height: 60px;
         }
         nav ul {
             list-style: none;
-            margin: 0;
-            padding: 0;
             display: flex;
-            gap: 22px;
+            gap: 30px;
         }
-        nav a {
-            color: #f0d18a;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            position: relative;
-        }
-        nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #f0d18a, #d4af37);
-            transition: width 0.25s ease;
-        }
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero */
-        .hero {
-            position: relative;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top left, #222 0, #000 45%);
-            z-index: -2;
-        }
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(240, 209, 138, 0.15), transparent 60%);
-            mix-blend-mode: screen;
-            opacity: 0.4;
-            z-index: -1;
-        }
-        .hero-inner {
-            max-width: 900px;
-            padding: 80px 20px 60px;
-            animation: fadeInUp 1s ease forwards;
-        }
-        .hero-eyebrow {
-            font-size: 0.8rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: #d4af37;
-            margin-bottom: 10px;
-        }
-        .hero-title {
-            font-size: clamp(2.3rem, 4vw, 3.5rem);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin: 0 0 18px;
-        }
-        .hero-subtitle {
-            font-size: 1.05rem;
-            max-width: 640px;
-            margin: 0 auto 28px;
-            color: #e4d5a5;
-            line-height: 1.6;
-        }
-        .hero-cta {
-            display: inline-flex;
-            gap: 14px;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-cta a.primary {
-            padding: 12px 26px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #f0d18a, #d4af37);
-            color: #000;
+        nav ul li a {
+            color: #d5c28a;
             text-decoration: none;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.85rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .hero-cta a.primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.95);
+        nav ul li a:hover {
+            color: #fff;
         }
-        .hero-cta a.secondary {
-            padding: 11px 22px;
-            border-radius: 999px;
-            border: 1px solid rgba(240, 209, 138, 0.6);
-            color: #f0d18a;
-            text-decoration: none;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.8rem;
-            backdrop-filter: blur(4px);
-            background: rgba(0, 0, 0, 0.4);
+        .hero {
+            background: url('EliteRide_Logo.png') no-repeat center center;
+            background-size: cover;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-
-        /* Sections */
+        .hero h1 {
+            font-size: 3em;
+            color: #d5c28a;
+        }
+        .hero p {
+            font-size: 1.5em;
+            color: #fff;
+        }
         .section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
+            padding: 60px 10%;
+            text-align: center;
         }
         .section h3 {
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            font-size: 0.9rem;
-            color: #d4af37;
-            margin-bottom: 8px;
-        }
-        .section h2 {
-            font-size: 1.7rem;
-            margin: 0 0 20px;
-        }
-        .section p {
-            color: #e4d5a5;
-            line-height: 1.7;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 22px;
-            margin-top: 24px;
-        }
-        .card {
-            border-radius: 16px;
-            background: radial-gradient(circle at top, #1d1a14, #070707);
-            border: 1px solid rgba(240, 209, 138, 0.16);
-            padding: 22px 20px;
-            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.85);
-            transform: translateY(0);
-            transition: transform 0.25s ease, box-shadow 0.25s ease,
-                border-color 0.25s ease;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 40px rgba(0, 0, 0, 1);
-            border-color: rgba(240, 209, 138, 0.6);
-        }
-        .card h4 {
-            margin: 0 0 10px;
-            font-size: 1.05rem;
-        }
-        .card p {
-            font-size: 0.9rem;
-            margin: 0;
-        }
-
-        .airports-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 18px;
-            margin-top: 24px;
-        }
-        .airport-tag {
-            border-radius: 999px;
-            border: 1px solid rgba(240, 209, 138, 0.2);
-            padding: 10px 16px;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.7);
-        }
-        .airport-code {
-            font-weight: 700;
-            color: #f0d18a;
-        }
-        .airport-name {
-            font-size: 0.85rem;
-            color: #e4d5a5;
-        }
-
-        /* Contact */
-        .contact-section {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 36px;
-            align-items: center;
-        }
-        .contact-details {
-            font-size: 1.05rem;
             color: #d5c28a;
-            line-height: 2em;
+            margin-bottom: 20px;
         }
-        .contact-details strong {
-            color: #f0d18a;
+        .quote-form select, .quote-form button {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
         }
-
-        .cta {
-            margin-top: 16px;
+        .quote-form button {
+            background-color: #d5c28a;
+            color: #000;
+            cursor: pointer;
         }
-        .cta a {
-            display: inline-block;
-            padding: 11px 22px;
-            border-radius: 999px;
-            border: 1px solid rgba(240, 209, 138, 0.6);
-            text-decoration: none;
-            color: #f0d18a;
-            text-transform: uppercase;
-            letter-spacing: 0.09em;
-            font-size: 0.8rem;
-        }
-
-        /* Quote form styles */
-        .quote-form {
-            margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-        }
-        .quote-form select {
-            min-width: 210px;
-            padding: 10px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(240, 209, 138, 0.5);
-            background: rgba(0, 0, 0, 0.8);
-            color: #f0d18a;
-            font-size: 0.9rem;
-            outline: none;
-        }
-        .quote-form select:focus {
-            border-color: rgba(240, 209, 138, 0.9);
-        }
-        .quote-result {
-            margin-top: 22px;
-            text-align: center;
+        .quote-form button:hover {
+            background-color: #fff;
+            color: #000;
         }
         .fare-display {
-            font-size: 1rem;
-            color: #f0d18a;
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #d5c28a;
         }
-
-        footer.footer {
-            border-top: 1px solid rgba(240, 209, 138, 0.16);
+        .contact-section {
+            background-color: #111;
+            padding: 60px 10%;
             text-align: center;
+        }
+        .contact-details p {
+            color: #d5c28a;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+        footer {
+            background-color: #000;
             padding: 20px;
-            font-size: 0.8rem;
-            color: #b9aa7a;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 8px;
-            }
-            .contact-section {
-                grid-template-columns: 1fr;
-            }
-            .hero-inner {
-                padding-top: 110px;
-            }
+            text-align: center;
+            color: #d5c28a;
         }
     </style>
 </head>
 <body>
-<header>
-    <div class="nav-container">
-        <div class="logo-wrap">
-            <!-- If your logo file is in the same folder, it will show here -->
-            <img src="EliteRide_Logo.png" alt="EliteRide Logo" />
-            <div class="logo-text">EliteRide</div>
-        </div>
+    <header>
+        <img src="EliteRide_Logo.png" alt="EliteRide Logo">
         <nav>
             <ul>
-                <li><a href="#top">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#airports">Airports</a></li>
                 <li><a href="#rates">Rates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </div>
-</header>
+    </header>
 
-<main id="top">
     <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-eyebrow">Norwalk • Fairfield County • NYC Airports</div>
-            <h1 class="hero-title">EliteRide – Your Executive Chauffeur Service</h1>
-            <p class="hero-subtitle">
-                Private Suburban service for airport transfers, corporate travel, events,
-                and VIP clients. One vehicle, one professional chauffeur, serving
-                Connecticut, Westchester, and all major NYC airports.
-            </p>
-            <div class="hero-cta">
-                <a class="primary" href="#rates">Get an instant fare estimate</a>
-                <a class="secondary" href="mailto:eliterideconnect@gmail.com">
-                    Email EliteRide
-                </a>
-            </div>
-        </div>
+        <h1>Your Executive Chauffeur Service</h1>
+        <p>Luxury, Comfort, and Professionalism — Every Mile of the Way</p>
     </section>
 
     <section class="section" id="services">
-        <h3>What We Do</h3>
-        <h2>Premium Black Car Service on Your Schedule</h2>
-        <p>
-            EliteRide LLC is a boutique, owner-operated chauffeur service based in Norwalk, CT.
-            We specialize in executive airport transfers, corporate travel, and special events
-            where reliability, discretion, and comfort matter most.
-        </p>
-
-        <div class="cards">
-            <div class="card">
-                <h4>Airport Transfers</h4>
-                <p>
-                    Stress-free rides to and from JFK, LGA, EWR, HPN, and BDL with professional,
-                    on-time pickup, baggage assistance, and flight tracking.
-                </p>
-            </div>
-            <div class="card">
-                <h4>Corporate & Executive Travel</h4>
-                <p>
-                    Consistent, high-touch service for business travelers, VIP guests, and
-                    visiting executives who expect a seamless experience.
-                </p>
-            </div>
-            <div class="card">
-                <h4>Events & Special Occasions</h4>
-                <p>
-                    Weddings, galas, graduations, and nights out. Arrive in style and leave the
-                    driving to your dedicated chauffeur.
-                </p>
-            </div>
-        </div>
+        <h3>Our Services</h3>
+        <p>EliteRide specializes in executive transportation, airport transfers, weddings, and corporate events. Experience unmatched comfort and style in every ride.</p>
     </section>
 
     <section class="section" id="airports">
-        <h3>Airports We Serve</h3>
-        <h2>Door-to-Door Service to Major Hubs</h2>
-        <p>
-            EliteRide provides pre-scheduled transportation between Fairfield County,
-            Westchester County, and the following airports:
-        </p>
-
-        <div class="airports-grid">
-            <div class="airport-tag">
-                <span class="airport-code">JFK</span>
-                <span class="airport-name">John F. Kennedy International</span>
-            </div>
-            <div class="airport-tag">
-                <span class="airport-code">LGA</span>
-                <span class="airport-name">LaGuardia Airport</span>
-            </div>
-            <div class="airport-tag">
-                <span class="airport-code">EWR</span>
-                <span class="airport-name">Newark Liberty International</span>
-            </div>
-            <div class="airport-tag">
-                <span class="airport-code">HPN</span>
-                <span class="airport-name">Westchester County Airport</span>
-            </div>
-            <div class="airport-tag">
-                <span class="airport-code">BDL</span>
-                <span class="airport-name">Bradley International Airport</span>
-            </div>
-        </div>
+        <h3>Airport Transfers</h3>
+        <p>We service JFK, LGA, EWR, BDL, and HPN. Relax while we get you there safely and on time.</p>
     </section>
 
-    <!-- Rates Section with Request Logic -->
     <section class="section" id="rates">
-        <h3>Instant Fare Estimate & Request</h3>
-        <h2>Plan Your Trip in Seconds</h2>
-        <p>
-            Select your pickup location and destination airport to see your estimated fare.
-            This is a <strong>booking request only</strong>. Your ride is
-            <strong>not confirmed</strong> until EliteRide emails you a confirmation.
-        </p>
-
+        <h3>Instant Fare Estimate</h3>
+        <p>Select your pickup location and destination airport to view your estimated fare.</p>
         <div class="quote-form">
             <select id="origin-select">
-                <option value="">Pickup location</option>
+                <option value="">Select Pickup Location</option>
                 <option value="Norwalk">Norwalk</option>
                 <option value="Stamford">Stamford</option>
                 <option value="Greenwich">Greenwich</option>
-                <option value="Fairfield">Fairfield</option>
                 <option value="Darien">Darien</option>
+                <option value="Fairfield">Fairfield</option>
             </select>
-
-            <select id="airport-select">
-                <option value="">Destination airport</option>
-                <option value="JFK">JFK – John F. Kennedy</option>
-                <option value="LGA">LGA – LaGuardia</option>
-                <option value="EWR">EWR – Newark</option>
-                <option value="HPN">HPN – Westchester</option>
-                <option value="BDL">BDL – Bradley</option>
+            <select id="destination-select">
+                <option value="">Select Airport</option>
+                <option value="JFK">JFK</option>
+                <option value="LGA">LGA</option>
+                <option value="EWR">EWR</option>
+                <option value="HPN">HPN</option>
+                <option value="BDL">BDL</option>
             </select>
+            <button onclick="calculateFare()">Check Fare</button>
         </div>
-
-        <div class="quote-result">
-            <div id="fare-result" class="fare-display">
-                Select a route to see your estimated one-way fare.
-            </div>
-
-            <!-- REQUEST BUTTON (request only, not auto-confirmed) -->
-            <a id="book-button"
-               href="#"
-               style="display:none; margin-top:20px; padding:12px 28px; border-radius:999px;
-                      background:linear-gradient(135deg,#f0d18a,#d4af37); color:#000;
-                      font-weight:600; text-transform:uppercase; letter-spacing:0.06em;
-                      text-decoration:none; display:inline-block;">
-                Request this ride
-            </a>
-
-            <!-- FULLY BOOKED MESSAGE (shown when availability off) -->
-            <p id="booked-message"
-               style="display:none; margin-top:14px; font-size:0.95em; color:#f0d18a;">
-                We are currently fully booked for this time window.
-                Please call or email to check future availability.
-            </p>
-
-            <!-- Disclaimer -->
-            <p style="margin-top:14px; font-size:0.9em; color:#c7b878;">
-                This form sends a booking request. Your trip is not confirmed until
-                you receive a confirmation email from EliteRide.
-            </p>
-        </div>
+        <div class="fare-display" id="fare-display">Select your route to view fare.</div>
     </section>
 
-    <section class="section" id="contact">
-        <h3>Contact</h3>
-        <h2>Reserve Your Executive Ride</h2>
-        <div class="contact-section">
-            <div>
-                <p class="contact-details">
-                    <strong>Phone:</strong> (475) 266-1458<br />
-                    <strong>Email:</strong> eliterideconnect@gmail.com<br />
-                    <strong>Website:</strong> www.eliteridect.com<br />
-                    <strong>Service Area:</strong> Norwalk, Fairfield County, Westchester County, NYC Airports<br />
-                    <strong>Hours:</strong> 24/7 by advance reservation
-                </p>
-                <div class="cta">
-                    <a href="mailto:eliterideconnect@gmail.com?subject=EliteRide%20General%20Inquiry">
-                        Email EliteRide
-                    </a>
-                </div>
-            </div>
+    <section class="contact-section" id="contact">
+        <h3>Contact Us</h3>
+        <div class="contact-details">
+            <p>Phone: (475) 266-1458</p>
+            <p>Email: eliterideconnect@gmail.com</p>
+            <p>Website: www.eliteridect.com</p>
         </div>
+        <div class="cta"><a href="mailto:eliterideconnect@gmail.com?subject=EliteRide%20Booking%20Request"><button>Request Now</button></a></div>
     </section>
-</main>
 
-<footer class="footer">
-    &copy; 2025 EliteRide LLC. All rights reserved.
-</footer>
+    <footer>
+        &copy; 2025 EliteRide LLC. All rights reserved.
+    </footer>
 
-<!-- Pricing & Booking Request Script -->
-<script>
-    // Flip this to false when you are fully booked (no new requests)
-    const ACCEPTING_BOOKINGS = true;
+    <script>
+        const fareRates = {
+            'Norwalk': {'JFK': 226, 'LGA': 210, 'EWR': 233, 'HPN': 137, 'BDL': 239},
+            'Stamford': {'JFK': 211, 'LGA': 189, 'EWR': 210, 'HPN': 126, 'BDL': 233},
+            'Greenwich': {'JFK': 203, 'LGA': 186, 'EWR': 202, 'HPN': 119, 'BDL': 225},
+            'Darien': {'JFK': 219, 'LGA': 204, 'EWR': 224, 'HPN': 132, 'BDL': 237},
+            'Fairfield': {'JFK': 229, 'LGA': 215, 'EWR': 237, 'HPN': 141, 'BDL': 245}
+        };
 
-    // Fare matrix – adjust these as your official rates
-    const fareRates = {
-        "Norwalk":  { "JFK": 226.00, "LGA": 210.93, "EWR": 232.00, "HPN": 137.00, "BDL": 235.00 },
-        "Stamford": { "JFK": 210.00, "LGA": 195.00, "EWR": 220.00, "HPN": 120.00, "BDL": 245.00 },
-        "Greenwich":{"JFK": 203.00, "LGA": 186.27, "EWR": 216.00, "HPN": 115.00, "BDL": 250.00 },
-        "Fairfield":{"JFK": 240.00, "LGA": 225.00, "EWR": 245.00, "HPN": 150.00, "BDL": 260.00 },
-        "Darien":   {"JFK": 220.00, "LGA": 205.00, "EWR": 230.00, "HPN": 140.00, "BDL": 245.00 }
-    };
+        function calculateFare() {
+            const origin = document.getElementById('origin-select').value;
+            const destination = document.getElementById('destination-select').value;
+            const display = document.getElementById('fare-display');
 
-    function formatCurrency(amount) {
-        return "$" + amount.toFixed(2);
-    }
-
-    function updateFare() {
-        const originSelect   = document.getElementById("origin-select");
-        const airportSelect  = document.getElementById("airport-select");
-        const resultEl       = document.getElementById("fare-result");
-        const bookBtn        = document.getElementById("book-button");
-        const bookedMsg      = document.getElementById("booked-message");
-
-        const origin  = originSelect.value;
-        const airport = airportSelect.value;
-
-        // Reset
-        bookBtn.style.display   = "none";
-        bookedMsg.style.display = "none";
-
-        if (!origin || !airport) {
-            resultEl.textContent = "Select a route to see your estimated one-way fare.";
-            return;
+            if (origin && destination) {
+                const fare = fareRates[origin][destination];
+                display.innerHTML = `Estimated Fare from <b>${origin}</b> to <b>${destination}</b>: <span style="color:#fff">$${fare}</span>`;
+            } else {
+                display.innerHTML = 'Please select both pickup location and destination.';
+            }
         }
-
-        const originRates = fareRates[origin] || {};
-        const fare = originRates[airport];
-
-        if (!fare) {
-            resultEl.textContent = "Please contact us for a custom quote for this route.";
-            return;
-        }
-
-        resultEl.textContent = "Estimated one-way fare from " + origin +
-            " to " + airport + ": " + formatCurrency(fare);
-
-        if (ACCEPTING_BOOKINGS) {
-            bookBtn.style.display = "inline-block";
-
-            const subject = encodeURIComponent(
-                "Booking Request (Not Confirmed): " + origin + " → " + airport
-            );
-            const body = encodeURIComponent(
-                "Hello EliteRide,%0D%0A%0D%0A" +
-                "I would like to request a trip with EliteRide.%0D%0A%0D%0A" +
-                "Pickup city: " + origin + "%0D%0A" +
-                "Destination airport: " + airport + "%0D%0A" +
-                "Estimated fare shown: " + formatCurrency(fare) + "%0D%0A%0D%0A" +
-                "Preferred pickup date & time:%0D%0A" +
-                "Number of passengers:%0D%0A" +
-                "Luggage:%0D%0A" +
-                "Special requests:%0D%0A%0D%0A" +
-                "I understand this is a booking request only and my ride is not confirmed " +
-                "until EliteRide sends me a confirmation email.%0D%0A%0D%0A" +
-                "Thank you."
-            );
-
-            bookBtn.href = "mailto:eliterideconnect@gmail.com?subject=" + subject + "&body=" + body;
-        } else {
-            bookedMsg.style.display = "block";
-        }
-    }
-
-    document.getElementById("origin-select").addEventListener("change", updateFare);
-    document.getElementById("airport-select").addEventListener("change", updateFare);
-</script>
+    </script>
 </body>
 </html>
