@@ -113,8 +113,9 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.25), transparent 50%),
-                        radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.18), transparent 55%);
+            background:
+                radial-gradient(circle at top left, rgba(212, 175, 55, 0.25), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.18), transparent 55%);
             opacity: 0.9;
         }
 
@@ -448,6 +449,33 @@
             margin-top: 4px;
         }
 
+        /* Payment box */
+        .payment-box {
+            margin-top: 18px;
+            padding: 14px 14px 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.16), rgba(5, 5, 5, 0.95));
+        }
+
+        .payment-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent-soft);
+            margin-bottom: 6px;
+        }
+
+        .payment-box p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin: 3px 0;
+        }
+
+        .payment-highlight {
+            color: var(--accent-soft);
+            font-weight: 600;
+        }
+
         footer {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding: 18px 20px;
@@ -547,8 +575,8 @@
                 Serving Connecticut, Westchester, NYC and beyond.
             </p>
             <div class="hero-actions">
-                <button class="btn-primary" onclick="scrollToId('rates')">Get Instant Fare</button>
-                <button class="btn-ghost" onclick="scrollToId('contact')">Request a Booking</button>
+                <button class="btn-primary" type="button" onclick="scrollToId('rates')">Get Instant Fare</button>
+                <button class="btn-ghost" type="button" onclick="scrollToId('contact')">Request a Booking</button>
             </div>
             <div class="hero-meta">
                 <strong>24/7</strong> availability · Professional chauffeur · Clean, spacious SUV
@@ -781,6 +809,26 @@
                 <p class="booking-help">
                     Corporate accounts and repeat traveler arrangements available upon request.
                 </p>
+
+                <!-- Payment Options (Zelle) -->
+                <div class="payment-box">
+                    <div class="payment-title">Payment Options</div>
+                    <p>
+                        We currently accept payments via
+                        <span class="payment-highlight">Zelle</span>.
+                    </p>
+                    <p>
+                        📧 <span class="payment-highlight">Zelle email:</span> eliterideconnect@gmail.com
+                    </p>
+                    <p>
+                        💼 <span class="payment-highlight">Account name:</span> EliteRide LLC
+                    </p>
+                    <p style="margin-top:6px;">
+                        Once your trip is quoted, you’ll receive an email or text with the total.
+                        Please send your payment via Zelle to confirm your booking. You’ll then receive a
+                        final confirmed itinerary.
+                    </p>
+                </div>
             </div>
 
             <div>
@@ -809,7 +857,8 @@
                     <button class="btn-primary" type="submit">Send Booking Request</button>
                     <div class="booking-help">
                         This will open your email app with all the details filled in to send to
-                        <strong>eliterideconnect@gmail.com</strong>.
+                        <strong>eliterideconnect@gmail.com</strong>. You will receive a confirmation and Zelle
+                        payment instructions if you haven’t already paid.
                     </div>
                 </form>
             </div>
