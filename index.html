@@ -524,66 +524,7 @@
             margin-bottom: 0;
         }
 
-        /* Future Fleet Section */
-        .future-fleet {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);
-            text-align: center;
-        }
-
-        .future-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .future-card {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 15px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-
-        .future-card:hover {
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-
-        .future-card i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .future-card h4 {
-            color: var(--accent-soft);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .future-card p {
-            color: var(--muted);
-            font-size: 0.9rem;
-            margin: 0;
-        }
-
-        .coming-soon {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--accent-soft);
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        /* Enhanced Quote Section */
+        /* Quote Section */
         .quote-section {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);
         }
@@ -781,52 +722,6 @@
             margin-top: 10px;
         }
 
-        /* Enhanced Footer */
-        footer {
-            background: var(--bg-card);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: left;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h4 {
-            color: var(--accent-soft);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .footer-section a {
-            display: block;
-            color: var(--muted);
-            margin-bottom: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent-soft);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 20px;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom span {
-            color: var(--accent-soft);
-        }
-
         /* Animations */
         @keyframes fadeUp {
             from {
@@ -866,10 +761,6 @@
             .hero-card {
                 order: -1;
             }
-            
-            nav ul {
-                display: none;
-            }
         }
 
         @media (max-width: 768px) {
@@ -898,22 +789,6 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        @media (max-width: 480px) {
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -928,12 +803,11 @@
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#vehicle">Our SUV</a></li>
-                <li><a href="#airports">Airports</a></li>
                 <li><a href="#rates">Get Quote</a></li>
                 <li><a href="#contact">Book Now</a></li>
             </ul>
         </nav>
-        <button class="cta-button" onclick="scrollToId('contact')">
+        <button class="cta-button" id="reserveNowBtn">
             <i class="fas fa-car"></i> Reserve Now
         </button>
     </div>
@@ -965,10 +839,10 @@
             </div>
 
             <div class="hero-actions">
-                <button class="btn-primary" onclick="scrollToId('rates')">
+                <button class="btn-primary" id="getQuoteBtn">
                     <i class="fas fa-dollar-sign"></i> Get Instant Quote
                 </button>
-                <button class="btn-secondary" onclick="scrollToId('contact')">
+                <button class="btn-secondary" id="callNowBtn">
                     <i class="fas fa-phone"></i> (475) 266-1458
                 </button>
             </div>
@@ -1043,7 +917,7 @@
             </ul>
             
             <div class="hero-actions">
-                <button class="btn-primary" onclick="scrollToId('contact')">
+                <button class="btn-primary" id="bookSuvBtn">
                     <i class="fas fa-calendar-check"></i> Book This SUV
                 </button>
             </div>
@@ -1099,151 +973,117 @@
     </div>
 </section>
 
-<section id="future-fleet" class="section future-fleet">
+<section id="rates" class="section quote-section">
     <div class="section-inner">
         <div class="section-header">
-            <h2 class="section-title">Future <span>Expansion</span></h2>
+            <h2 class="section-title">Instant <span>Quote</span></h2>
             <p class="section-subtitle">
-                We're committed to growing our fleet to serve you better. Here's what's coming soon:
+                Get a quick estimate for popular routes. All quotes are for our luxury SUV service.
             </p>
         </div>
 
-        <div class="future-cards">
-            <div class="future-card">
-                <i class="fas fa-car"></i>
-                <h4>Executive Sedan</h4>
-                <p>Perfect for business travel and intimate occasions</p>
-                <div class="coming-soon">Coming Soon</div>
+        <div class="quote-layout">
+            <div class="quote-card">
+                <h3>Standard Routes (Instant Estimate)</h3>
+                <form class="quote-form" id="quoteForm">
+                    <div class="form-group">
+                        <label for="origin-select">Pickup city</label>
+                        <select id="origin-select">
+                            <option value="">Select city</option>
+                            <option value="Norwalk">Norwalk</option>
+                            <option value="Stamford">Stamford</option>
+                            <option value="Greenwich">Greenwich</option>
+                            <option value="Darien">Darien</option>
+                            <option value="Fairfield">Fairfield</option>
+                            <option value="Westport">Westport</option>
+                            <option value="New Canaan">New Canaan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination-select">Destination</label>
+                        <select id="destination-select">
+                            <option value="">Select airport / city</option>
+                            <option value="JFK">JFK Airport</option>
+                            <option value="LGA">LaGuardia (LGA)</option>
+                            <option value="EWR">Newark (EWR)</option>
+                            <option value="HPN">Westchester (HPN)</option>
+                            <option value="BDL">Bradley (BDL)</option>
+                            <option value="Manhattan">Manhattan (Midtown)</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="quote-actions">
+                    <button class="btn-primary" id="calculateFareBtn">
+                        Show Fare
+                    </button>
+                    <button class="btn-secondary" id="bookThisTripBtn">
+                        Book This Trip
+                    </button>
+                </div>
+                <div class="fare-display" id="fare-display">
+                    Select a pickup city and destination to see your estimated fare.
+                </div>
+                <div class="fare-note">
+                    Estimates are for luxury SUV service and may adjust for heavy traffic, extra stops, or wait time.
+                </div>
             </div>
-            <div class="future-card">
-                <i class="fas fa-shuttle-van"></i>
-                <h4>Luxury Sprinter</h4>
-                <p>Ideal for larger groups and corporate events</p>
-                <div class="coming-soon">Coming Soon</div>
-            </div>
-            <div class="future-card">
-                <i class="fas fa-gem"></i>
-                <h4>Premium Fleet</h4>
-                <p>Expanding our luxury vehicle options</p>
-                <div class="coming-soon">Coming Soon</div>
+
+            <div class="custom-card">
+                <h3>Custom Routes (Any City)</h3>
+                <p style="font-size:0.9rem; color:var(--muted); margin-bottom:12px;">
+                    Traveling from another city or to a non-airport destination? We serve many locations across CT, NY, NJ, MA and beyond.
+                </p>
+                <button class="btn-secondary" id="customQuoteBtn" style="width: 100%;">
+                    Get Custom Quote
+                </button>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Rest of the sections (Airports, Rates, Contact) would follow the same structure as before -->
-<!-- I've kept the core functionality but focused everything on your single luxury SUV -->
-
-<script>
-    // Enhanced fare table with SUV focus
-    const fareTable = {
-        "Norwalk": { "JFK": 226, "LGA": 210, "EWR": 233, "HPN": 137, "BDL": 239, "Manhattan": 215 },
-        "Stamford": { "JFK": 211, "LGA": 189, "EWR": 210, "HPN": 126, "BDL": 233, "Manhattan": 199 },
-        "Greenwich": { "JFK": 203, "LGA": 186, "EWR": 202, "HPN": 119, "BDL": 225, "Manhattan": 189 },
-        "Darien": { "JFK": 219, "LGA": 204, "EWR": 224, "HPN": 132, "BDL": 237, "Manhattan": 209 },
-        "Fairfield": { "JFK": 229, "LGA": 215, "EWR": 237, "HPN": 141, "BDL": 245, "Manhattan": 225 },
-        "Westport": { "JFK": 233, "LGA": 219, "EWR": 241, "HPN": 145, "BDL": 249, "Manhattan": 229 },
-        "New Canaan": { "JFK": 221, "LGA": 207, "EWR": 229, "HPN": 135, "BDL": 241, "Manhattan": 215 }
-    };
-
-    function calculateFare() {
-        const origin = document.getElementById("origin-select").value;
-        const destination = document.getElementById("destination-select").value;
-        const display = document.getElementById("fare-display");
-
-        if (!origin || !destination) {
-            display.innerHTML = "<p style='color: var(--muted);'>Please select both pickup city and destination.</p>";
-            return;
-        }
-
-        const cityTable = fareTable[origin];
-        if (!cityTable || typeof cityTable[destination] === "undefined") {
-            display.innerHTML = `
-                <p style='color: var(--accent-soft); font-weight: 600;'>Custom Route Pricing</p>
-                <p style='color: var(--muted); margin: 10px 0;'>This route requires custom pricing for our luxury SUV service.</p>
-                <button class="btn-secondary" onclick="scrollToId('contact')" style="margin-top: 10px;">Get Custom Quote</button>
-            `;
-            return;
-        }
-
-        const amount = cityTable[destination];
-        display.innerHTML = `
-            <p style='color: var(--accent-soft); font-weight: 600; margin-bottom: 10px;'>Luxury SUV Service</p>
-            <p style='font-size: 1.1rem; margin: 5px 0;'>
-                <strong style='color: var(--text-main);'>${origin}</strong> → 
-                <strong style='color: var(--text-main);'>${destination}</strong>
+<section id="contact" class="section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2 class="section-title">Booking & <span>Contact</span></h2>
+            <p class="section-subtitle">
+                Ready to book your luxury SUV service? Contact us directly or use the booking form below.
             </p>
-            <p style='font-size: 2rem; color: var(--accent); font-weight: 700; margin: 10px 0;'>$${amount}</p>
-            <p style='color: var(--muted); font-size: 0.9rem;'>All-inclusive luxury SUV service for up to 7 passengers</p>
-            <button class="btn-primary" onclick="scrollToId('contact')" style="margin-top: 15px; width: 100%;">
-                <i class="fas fa-car"></i> Book Luxury SUV
-            </button>
-        `;
-    }
+        </div>
 
-    function scrollToId(id) {
-        const el = document.getElementById(id);
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    }
+        <div class="contact-grid">
+            <div>
+                <h3>EliteRide CT – Luxury SUV Service</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <span><a href="tel:14752661458">(475) 266-1458</a></span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <span><a href="mailto:eliterideconnect@gmail.com">eliterideconnect@gmail.com</a></span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Hours</strong>
+                            <span>24/7 Service Available</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Service Area</strong>
+                            <span>Fairfield County, Westchester, NYC Metro</span>
+                        </div>
+                    </div>
+                </div>
 
-    function sendBookingEmail() {
-        const name = document.getElementById("bk-name").value.trim();
-        const email = document.getElementById("bk-email").value.trim();
-        const phone = document.getElementById("bk-phone").value.trim();
-        const pickup = document.getElementById("bk-pickup").value.trim();
-        const dropoff = document.getElementById("bk-dropoff").value.trim();
-        const datetime = document.getElementById("bk-datetime").value.trim();
-        const notes = document.getElementById("bk-notes").value.trim();
-
-        if (!name || !email || !phone || !pickup || !dropoff || !datetime) {
-            alert("Please fill in all required fields before sending your request.");
-            return;
-        }
-
-        const subject = "EliteRide CT - Luxury SUV Booking Request";
-        const body = `
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-
-Pickup: ${pickup}
-Drop-off: ${dropoff}
-Date & Time: ${datetime}
-
-Service: Luxury SUV (Chevrolet Suburban)
-Passengers: [Please specify number of passengers]
-Luggage: [Please specify number of bags]
-
-${notes ? `Notes: ${notes}` : ''}
-
-Sent from EliteRide CT website booking form.
-        `.trim();
-
-        const mailtoLink = `mailto:eliterideconnect@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoLink;
-    }
-
-    // Add intersection observer for animations
-    document.addEventListener('DOMContentLoaded', function() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, { threshold: 0.1 });
-
-        // Observe all cards and sections
-        document.querySelectorAll('.card, .section-title, .section-subtitle, .future-card').forEach(el => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(20px)";
-            el.style.transition = "all 0.6s ease";
-            observer.observe(el);
-        });
-    });
-</script>
-</body>
-</html>
+                <div class="payment-box">
+                    <div class="payment-title">Payment Options</div>
+                    <p style="color:
