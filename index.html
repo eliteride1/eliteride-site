@@ -1097,4 +1097,464 @@
                 <p>Fully licensed, insured, and background-checked professional chauffeurs</p>
             </div>
             <div class="about-feature">
-                <i class="fas fa
+                <i class="fas fa-shield-alt"></i>
+                <h3>Safety First</h3>
+                <p>Rigorous vehicle maintenance and comprehensive insurance coverage</p>
+            </div>
+            <div class="about-feature">
+                <i class="fas fa-star"></i>
+                <h3>5-Star Service</h3>
+                <p>Consistently rated excellent by our corporate and private clients</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="rates" class="section quote-section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2 class="section-title">Instant <span>Quote</span></h2>
+            <p class="section-subtitle">
+                Get a quick estimate for popular routes. All quotes are for our luxury SUV service.
+            </p>
+        </div>
+
+        <div class="quote-layout">
+            <div class="quote-card">
+                <h3>Standard Routes (Instant Estimate)</h3>
+                <form class="quote-form" id="quoteForm">
+                    <div class="form-group">
+                        <label for="origin-select">Pickup city</label>
+                        <select id="origin-select">
+                            <option value="">Select city</option>
+                            <option value="Norwalk">Norwalk</option>
+                            <option value="Stamford">Stamford</option>
+                            <option value="Greenwich">Greenwich</option>
+                            <option value="Darien">Darien</option>
+                            <option value="Fairfield">Fairfield</option>
+                            <option value="Westport">Westport</option>
+                            <option value="New Canaan">New Canaan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination-select">Destination</label>
+                        <select id="destination-select">
+                            <option value="">Select airport / city</option>
+                            <option value="JFK">JFK Airport</option>
+                            <option value="LGA">LaGuardia (LGA)</option>
+                            <option value="EWR">Newark (EWR)</option>
+                            <option value="HPN">Westchester (HPN)</option>
+                            <option value="BDL">Bradley (BDL)</option>
+                            <option value="Manhattan">Manhattan (Midtown)</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="quote-actions">
+                    <button class="btn-primary" id="calculateFareBtn">
+                        Show Fare
+                    </button>
+                    <button class="btn-secondary" id="bookThisTripBtn">
+                        Book This Trip
+                    </button>
+                </div>
+                <div class="fare-display" id="fare-display">
+                    Select a pickup city and destination to see your estimated fare.
+                </div>
+                <div class="fare-note">
+                    Estimates are for luxury SUV service and may adjust for heavy traffic, extra stops, or wait time.
+                </div>
+            </div>
+
+            <div class="custom-card">
+                <h3>Custom Routes (Any City)</h3>
+                <p style="font-size:0.9rem; color:var(--muted); margin-bottom:12px;">
+                    Traveling from another city or to a non-airport destination? We serve many locations across CT, NY, NJ, MA and beyond.
+                </p>
+                <button class="btn-secondary" id="customQuoteBtn" style="width: 100%;">
+                    Get Custom Quote
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2 class="section-title">Booking & <span>Contact</span></h2>
+            <p class="section-subtitle">
+                Ready to book your luxury SUV service? Contact us directly or use the booking form below.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <div>
+                <h3>EliteRide CT – Luxury SUV Service</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <span><a href="tel:14752661458">(475) 266-1458</a></span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <span><a href="mailto:eliterideconnect@gmail.com">eliterideconnect@gmail.com</a></span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Business Address</strong>
+                            <span>304 Main Ave #416, Norwalk CT 06851</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Hours</strong>
+                            <span>24/7 Service Available</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-car"></i>
+                        <div>
+                            <strong>Service Area</strong>
+                            <span>Fairfield County, Westchester, NYC Metro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-box">
+                    <div class="payment-title">Payment Options</div>
+                    <div class="payment-method">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <strong>Zelle</strong>
+                            <span>eliterideconnect@gmail.com</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--muted); margin-top: 10px;">
+                        We accept Zelle payments. Once your booking is confirmed, we'll provide payment instructions.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label for="bk-name">Full name *</label>
+                        <input id="bk-name" type="text" placeholder="Your name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-email">Email *</label>
+                        <input id="bk-email" type="email" placeholder="you@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-phone">Mobile number *</label>
+                        <input id="bk-phone" type="tel" placeholder="+1 (475) 266-1458" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-pickup">Pickup city / address *</label>
+                        <input id="bk-pickup" type="text" placeholder="City, state, or full address" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-dropoff">Drop-off city / address *</label>
+                        <input id="bk-dropoff" type="text" placeholder="Airport, city, or venue" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-datetime">Date & time *</label>
+                        <input id="bk-datetime" type="text" placeholder="e.g. April 5, 6:00 AM" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-passengers">Number of Passengers *</label>
+                        <select id="bk-passengers" required>
+                            <option value="">Select passengers</option>
+                            <option value="1">1 Passenger</option>
+                            <option value="2">2 Passengers</option>
+                            <option value="3">3 Passengers</option>
+                            <option value="4">4 Passengers</option>
+                            <option value="5">5 Passengers</option>
+                            <option value="6">6 Passengers</option>
+                            <option value="7">7 Passengers</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bk-notes">Notes (flight #, special requests, etc.)</label>
+                        <textarea id="bk-notes" placeholder="Optional, but helpful."></textarea>
+                    </div>
+                    <button class="btn-primary" type="submit" id="submitBookingBtn">
+                        <i class="fas fa-paper-plane"></i> Send Booking Request
+                    </button>
+                    <div class="booking-help">
+                        We'll contact you within 2 hours to confirm availability and provide payment instructions.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Confirmation Modal -->
+<div class="modal" id="confirmationModal">
+    <div class="modal-content">
+        <h3>Confirm Booking Request</h3>
+        <p>Are you sure you want to send this booking request? We'll contact you within 2 hours to confirm availability and provide payment instructions.</p>
+        <div class="modal-actions">
+            <button class="btn-secondary" id="cancelBookingBtn">Cancel</button>
+            <button class="btn-primary" id="confirmBookingBtn">Yes, Send Request</button>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <h3>Request Sent Successfully!</h3>
+        <p>Thank you for your booking request! We'll contact you within 2 hours to confirm availability and provide payment instructions.</p>
+        <div class="modal-actions">
+            <button class="btn-primary" id="closeSuccessBtn">Close</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>EliteRide CT</h4>
+            <p>Connecticut's premier luxury SUV service. Professional, reliable, and always on time.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#services">Services</a>
+            <a href="#vehicle">Our SUV</a>
+            <a href="#about">About</a>
+            <a href="#rates">Get Quote</a>
+            <a href="#contact">Book Now</a>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="tel:14752661458">(475) 266-1458</a>
+            <a href="mailto:eliterideconnect@gmail.com">eliterideconnect@gmail.com</a>
+            <span>304 Main Ave #416</span>
+            <span>Norwalk CT 06851</span>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 <span>EliteRide CT</span>. All rights reserved. Luxury SUV Service.
+    </div>
+</footer>
+
+<script>
+// Enhanced fare table with SUV focus
+const fareTable = {
+    "Norwalk": { "JFK": 226, "LGA": 210, "EWR": 233, "HPN": 137, "BDL": 239, "Manhattan": 215 },
+    "Stamford": { "JFK": 211, "LGA": 189, "EWR": 210, "HPN": 126, "BDL": 233, "Manhattan": 199 },
+    "Greenwich": { "JFK": 203, "LGA": 186, "EWR": 202, "HPN": 119, "BDL": 225, "Manhattan": 189 },
+    "Darien": { "JFK": 219, "LGA": 204, "EWR": 224, "HPN": 132, "BDL": 237, "Manhattan": 209 },
+    "Fairfield": { "JFK": 229, "LGA": 215, "EWR": 237, "HPN": 141, "BDL": 245, "Manhattan": 225 },
+    "Westport": { "JFK": 233, "LGA": 219, "EWR": 241, "HPN": 145, "BDL": 249, "Manhattan": 229 },
+    "New Canaan": { "JFK": 221, "LGA": 207, "EWR": 229, "HPN": 135, "BDL": 241, "Manhattan": 215 }
+};
+
+// Email Template Generator
+function generateBookingEmail(bookingData) {
+    const subject = `EliteRide CT Booking Request - ${bookingData.name} - ${bookingData.date}`;
+    
+    const body = `NEW BOOKING REQUEST
+
+Customer Information:
+• Name: ${bookingData.name}
+• Email: ${bookingData.email}
+• Phone: ${bookingData.phone}
+
+Trip Details:
+• Date: ${bookingData.date}
+• Pickup: ${bookingData.pickup}
+• Destination: ${bookingData.dropoff}
+• Passengers: ${bookingData.passengers}
+
+Additional Notes:
+${bookingData.notes || 'None'}
+
+Service: Luxury SUV (Chevrolet Suburban)
+Status: PENDING CONFIRMATION
+
+Please contact customer within 2 hours to confirm availability and provide payment instructions.`.trim();
+
+    return { subject, body };
+}
+
+// Enhanced booking form handler
+function sendBookingEmail() {
+    const name = document.getElementById("bk-name").value.trim();
+    const email = document.getElementById("bk-email").value.trim();
+    const phone = document.getElementById("bk-phone").value.trim();
+    const pickup = document.getElementById("bk-pickup").value.trim();
+    const dropoff = document.getElementById("bk-dropoff").value.trim();
+    const datetime = document.getElementById("bk-datetime").value.trim();
+    const passengers = document.getElementById("bk-passengers").value.trim();
+    const notes = document.getElementById("bk-notes").value.trim();
+
+    if (!name || !email || !phone || !pickup || !dropoff || !datetime || !passengers) {
+        alert("Please fill in all required fields before sending your request.");
+        return;
+    }
+
+    // Generate booking data
+    const bookingData = {
+        name,
+        email,
+        phone,
+        pickup,
+        dropoff,
+        date: datetime,
+        time: datetime,
+        passengers: passengers,
+        amount: "To be confirmed",
+        notes
+    };
+
+    const emailTemplate = generateBookingEmail(bookingData);
+    
+    const mailtoLink = `mailto:eliterideconnect@gmail.com?subject=${encodeURIComponent(emailTemplate.subject)}&body=${encodeURIComponent(emailTemplate.body)}`;
+    window.location.href = mailtoLink;
+    
+    // Show success modal
+    document.getElementById('successModal').style.display = 'flex';
+    
+    // Reset form
+    document.getElementById('bookingForm').reset();
+}
+
+// Button event handlers
+function calculateFare() {
+    const origin = document.getElementById("origin-select").value;
+    const destination = document.getElementById("destination-select").value;
+    const display = document.getElementById("fare-display");
+
+    if (!origin || !destination) {
+        display.innerHTML = "<p style='color: var(--muted);'>Please select both pickup city and destination.</p>";
+        return;
+    }
+
+    const cityTable = fareTable[origin];
+    if (!cityTable || typeof cityTable[destination] === "undefined") {
+        display.innerHTML = `
+            <p style='color: var(--accent-soft); font-weight: 600;'>Custom Route Pricing</p>
+            <p style='color: var(--muted); margin: 10px 0;'>This route requires custom pricing for our luxury SUV service.</p>
+            <button class="btn-secondary" onclick="scrollToId('contact')" style="margin-top: 10px;">Get Custom Quote</button>
+        `;
+        return;
+    }
+
+    const amount = cityTable[destination];
+    display.innerHTML = `
+        <p style='color: var(--accent-soft); font-weight: 600; margin-bottom: 10px;'>Luxury SUV Service</p>
+        <p style='font-size: 1.1rem; margin: 5px 0;'>
+            <strong style='color: var(--text-main);'>${origin}</strong> → 
+            <strong style='color: var(--text-main);'>${destination}</strong>
+        </p>
+        <p style='font-size: 2rem; color: var(--accent); font-weight: 700; margin: 10px 0;'>$${amount}</p>
+        <p style='color: var(--muted); font-size: 0.9rem;'>All-inclusive luxury SUV service for up to 7 passengers</p>
+        <button class="btn-primary" onclick="scrollToId('contact')" style="margin-top: 15px; width: 100%;">
+            <i class="fas fa-car"></i> Book Luxury SUV
+        </button>
+    `;
+}
+
+function scrollToId(id) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+}
+
+function callNow() {
+    window.location.href = "tel:14752661458";
+}
+
+// Initialize event listeners when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Button event listeners
+    document.getElementById('getQuoteBtn').addEventListener('click', function() {
+        scrollToId('rates');
+    });
+    
+    document.getElementById('callNowBtn').addEventListener('click', callNow);
+    
+    document.getElementById('reserveNowBtn').addEventListener('click', function() {
+        scrollToId('contact');
+    });
+    
+    document.getElementById('bookSuvBtn').addEventListener('click', function() {
+        scrollToId('contact');
+    });
+    
+    document.getElementById('calculateFareBtn').addEventListener('click', calculateFare);
+    
+    document.getElementById('bookThisTripBtn').addEventListener('click', function() {
+        scrollToId('contact');
+    });
+    
+    document.getElementById('customQuoteBtn').addEventListener('click', function() {
+        scrollToId('contact');
+    });
+
+    // Booking form handling
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('confirmationModal').style.display = 'flex';
+    });
+
+    document.getElementById('confirmBookingBtn').addEventListener('click', function() {
+        document.getElementById('confirmationModal').style.display = 'none';
+        sendBookingEmail();
+    });
+
+    document.getElementById('cancelBookingBtn').addEventListener('click', function() {
+        document.getElementById('confirmationModal').style.display = 'none';
+    });
+
+    document.getElementById('closeSuccessBtn').addEventListener('click', function() {
+        document.getElementById('successModal').style.display = 'none';
+    });
+
+    // Close modals when clicking outside
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+        }
+    });
+
+    // Add intersection observer for animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Observe all cards and sections
+    document.querySelectorAll('.card, .section-title, .section-subtitle, .about-feature').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "all 0.6s ease";
+        observer.observe(el);
+    });
+
+    // Add current year to footer
+    const currentYear = new Date().getFullYear();
+    const yearElement = document.querySelector('.footer-bottom');
+    if (yearElement) {
+        yearElement.innerHTML = `&copy; ${currentYear} <span>EliteRide CT</span>. All rights reserved. Luxury SUV Service.`;
+    }
+});
+</script>
+</body>
+</html>
