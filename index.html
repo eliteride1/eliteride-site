@@ -26,6 +26,7 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         a {
@@ -46,7 +47,7 @@
         .nav-inner {
             max-width: 1140px;
             margin: 0 auto;
-            padding: 12px 18px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -59,7 +60,7 @@
         }
 
         .logo-wrap img {
-            height: 44px;
+            height: 40px;
             border-radius: 10px;
         }
 
@@ -74,10 +75,10 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 18px;
             margin: 0;
             padding: 0;
-            font-size: 0.88rem;
+            font-size: 0.84rem;
         }
 
         nav ul li a {
@@ -108,7 +109,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 84px 18px 50px;
+            padding: 84px 18px 40px;
             overflow: hidden;
         }
 
@@ -127,7 +128,7 @@
             max-width: 1140px;
             width: 100%;
             display: grid;
-            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
             gap: 40px;
             align-items: center;
         }
@@ -210,49 +211,45 @@
             color: var(--accent-soft);
         }
 
-        .hero-card {
+        .hero-image-wrap {
             position: relative;
-            background:
-                radial-gradient(circle at top, rgba(212, 175, 55, 0.12), rgba(10, 10, 10, 0.98));
-            border-radius: 22px;
-            padding: 20px 20px 18px;
+            border-radius: 24px;
+            overflow: hidden;
             border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
             animation: floatIn 1s ease forwards;
         }
 
-        .hero-card-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+        .hero-image-wrap img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            filter: saturate(1.05);
         }
 
-        .hero-card-logo img {
-            height: 40px;
-            border-radius: 10px;
+        .hero-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top right, rgba(0, 0, 0, 0.7), transparent 40%);
         }
 
-        .hero-card-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--accent-soft);
-        }
-
-        .hero-card-body {
-            font-size: 0.84rem;
-            color: var(--muted);
-            margin-bottom: 12px;
-        }
-
-        .hero-card-tagline {
+        .hero-image-tag {
+            position: absolute;
+            left: 14px;
+            bottom: 14px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 999px;
+            padding: 6px 12px;
             font-size: 0.78rem;
             color: var(--accent-soft);
+            border: 1px solid rgba(212, 175, 55, 0.4);
         }
 
         /* Sections */
         section.section {
-            padding: 64px 18px;
+            padding: 50px 18px;
         }
 
         .section-inner {
@@ -285,6 +282,10 @@
 
         .grid-3 {
             grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         }
 
         .card {
@@ -322,6 +323,33 @@
             font-size: 0.9rem;
             color: var(--muted);
             line-height: 1.6;
+        }
+
+        /* Fleet images */
+        .fleet-image {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            height: 220px;
+        }
+
+        .fleet-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fleet-image-label {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            color: var(--accent-soft);
+            border: 1px solid rgba(212, 175, 55, 0.5);
         }
 
         /* Rates / Quote section */
@@ -535,6 +563,27 @@
             text-decoration-thickness: 1px;
         }
 
+        /* Back to top button (simple) */
+        .back-to-top {
+            position: fixed;
+            right: 16px;
+            bottom: 18px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(212, 175, 55, 0.7);
+            background: rgba(0, 0, 0, 0.85);
+            color: var(--accent-soft);
+            font-size: 0.78rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .back-to-top.show {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
         /* Animations & responsive */
         @keyframes fadeUp {
             from {
@@ -562,16 +611,17 @@
             .hero-inner {
                 grid-template-columns: 1fr;
             }
-            .hero-card {
-                order: -1;
+            .hero-image-wrap {
+                max-width: 420px;
+                margin: 0 auto;
             }
             .quote-layout,
             .contact-grid {
                 grid-template-columns: 1fr;
             }
             nav ul {
-                gap: 14px;
-                font-size: 0.8rem;
+                gap: 10px;
+                font-size: 0.78rem;
             }
             .nav-inner {
                 padding-inline: 12px;
@@ -580,7 +630,7 @@
 
         @media (max-width: 640px) {
             .hero {
-                padding-top: 72px;
+                padding-top: 76px;
             }
             .hero h1 {
                 font-size: 2.1rem;
@@ -603,25 +653,25 @@
         </div>
         <nav>
             <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#fleet">Fleet</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#airports">Airports</a></li>
                 <li><a href="#rates">Rates</a></li>
                 <li><a href="#contact">Booking</a></li>
-                <li><a href="#policies">Policies & Terms</a></li>
+                <li><a href="#policies">Policies</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="hero">
     <div class="hero-inner">
         <div class="hero-main">
             <div class="hero-kicker">Fairfield County · Westchester · NYC Airports</div>
             <h1>Your <span>Elite Ride</span> To Every Destination</h1>
             <p class="hero-subtitle">
-                EliteRide LLC provides luxury executive SUV transportation for airport transfers,
-                corporate travel, weddings, and private occasions. Discreet, punctual, and professional
-                every mile of the way.
+                EliteRide LLC provides luxury executive SUV transportation for airport transfers, corporate travel,
+                weddings, and private occasions. Discreet, punctual, and professional every mile of the way.
             </p>
             <div class="hero-actions">
                 <button class="btn-primary" type="button" onclick="scrollToId('rates')">Get Instant Fare</button>
@@ -632,25 +682,54 @@
             </div>
         </div>
 
-        <aside class="hero-card">
-            <div class="hero-card-logo">
-                <img src="EliteRide_Logo.png" alt="EliteRide mark" />
-                <div>
-                    <div class="hero-card-title">EliteRide LLC</div>
-                    <div style="font-size:0.75rem;color:var(--muted);">
-                        Norwalk · Connecticut · USA
+        <div class="hero-image-wrap">
+            <!-- Replace 'suburban.jpg' with your own image filename or a direct URL -->
+            <img src="suburban.jpg" alt="Black Suburban executive SUV" />
+            <div class="hero-image-overlay"></div>
+            <div class="hero-image-tag">Executive Black SUV · EliteRide LLC</div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="fleet">
+    <div class="section-inner">
+        <h2 class="section-title">Our <span>Fleet</span></h2>
+        <p class="section-subtitle">
+            Clean, spacious, blacked-out SUVs designed for comfort, privacy, and presence. Perfect for executives,
+            families, and VIP guests.
+        </p>
+
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="fleet-image">
+                    <!-- Replace 'suburban.jpg' with your actual file name or URL -->
+                    <img src="suburban.jpg" alt="Black Chevy Suburban for EliteRide" />
+                    <div class="fleet-image-label">Chevy Suburban · Executive SUV</div>
+                </div>
+                <div style="margin-top:10px;">
+                    <div class="card-title">Chevy Suburban</div>
+                    <div class="card-text">
+                        Spacious seating, generous luggage capacity, and a smooth ride. Ideal for airport transfers,
+                        corporate groups, and small families traveling in style.
                     </div>
                 </div>
             </div>
-            <div class="hero-card-body">
-                “We move executives, families, and VIP guests with quiet excellence.
-                From curbside to boardroom and from home to airport, our focus is
-                safety, comfort, and absolute reliability.”
+
+            <div class="card">
+                <div class="fleet-image">
+                    <!-- Replace 'escalade.jpg' with your actual file name or URL -->
+                    <img src="escalade.jpg" alt="Black Cadillac Escalade for EliteRide" />
+                    <div class="fleet-image-label">Cadillac Escalade · Luxury SUV</div>
+                </div>
+                <div style="margin-top:10px;">
+                    <div class="card-title">Cadillac Escalade (on request)</div>
+                    <div class="card-text">
+                        For select bookings and special events, we can arrange Escalade-level luxury, subject to
+                        availability and advance notice. Perfect for weddings and VIP clientele.
+                    </div>
+                </div>
             </div>
-            <div class="hero-card-tagline">
-                Louis Fedner Sainvil · Owner & Executive Chauffeur
-            </div>
-        </aside>
+        </div>
     </div>
 </section>
 
@@ -658,7 +737,7 @@
     <div class="section-inner">
         <h2 class="section-title">Executive & <span>Private</span> Services</h2>
         <p class="section-subtitle">
-            Designed for clients who expect more than a standard rideshare: quiet cabin, professional driver,
+            Built for clients who expect more than a standard rideshare: quiet cabin, professional driver,
             clear policies, and a seamless experience from first message to final drop-off.
         </p>
 
@@ -667,8 +746,8 @@
                 <div class="card-pill">Business & Corporate</div>
                 <div class="card-title">Executive Transfers</div>
                 <div class="card-text">
-                    Door-to-door transport for meetings, site visits, and client hospitality.
-                    Ideal for executives, consultants, and VIP guests who value discretion and punctuality.
+                    Door-to-door transport for meetings, site visits, and client hospitality. Ideal for executives,
+                    consultants, and VIP guests who value discretion and punctuality.
                 </div>
             </div>
             <div class="card">
@@ -683,7 +762,7 @@
                 <div class="card-pill">Events</div>
                 <div class="card-title">Weddings & Special Occasions</div>
                 <div class="card-text">
-                    Black-car level service for weddings, galas, and nights out. Coordination with planners
+                    Black-car style service for weddings, galas, and nights out. Coordination with planners
                     and venues, flexible wait time, and multi-stop itineraries on request.
                 </div>
             </div>
@@ -715,66 +794,11 @@
     </div>
 </section>
 
-<section class="section" id="airports">
-    <div class="section-inner">
-        <h2 class="section-title">Primary <span>Airports</span> We Serve</h2>
-        <p class="section-subtitle">
-            EliteRide operates between Fairfield County, Westchester, and all major New York and New England airports.
-            Custom destinations and out-of-area trips are available on request.
-        </p>
-
-        <div class="grid grid-3">
-            <div class="card">
-                <div class="card-title">JFK – John F. Kennedy</div>
-                <div class="card-text">
-                    Ideal for international and long-haul flights. Efficient pickups and drop-offs
-                    from Norwalk, Stamford, Greenwich and surrounding towns.
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-title">LGA – LaGuardia</div>
-                <div class="card-text">
-                    Domestic and shuttle routes with reliable arrival times. Perfect for business
-                    day trips and frequent flyers.
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-title">EWR – Newark</div>
-                <div class="card-text">
-                    Smooth cross-state rides for United and Star Alliance travelers. Flat-rate quotes
-                    available before you confirm your booking.
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-title">HPN – Westchester</div>
-                <div class="card-text">
-                    A favorite for private and regional flights. Fast access from Fairfield County
-                    with minimal stress and efficient wait times.
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-title">BDL – Bradley</div>
-                <div class="card-text">
-                    Connecticut’s major airport for New England routes. Pre-booked transfers only,
-                    with clear pricing and policies.
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-title">Custom Destinations</div>
-                <div class="card-text">
-                    Hotels, offices, cruise terminals, and private residences. If we can safely reach
-                    your destination, we can quote the trip.
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="section" id="rates">
     <div class="section-inner">
         <h2 class="section-title">Instant <span>Fare Estimate</span></h2>
         <p class="section-subtitle">
-            Get a quick estimate for popular routes. For any city not listed here, you can still request a custom quote
+            Get a quick estimate for popular routes. For any city not listed here, request a custom quote
             in the booking section below.
         </p>
 
@@ -1013,6 +1037,10 @@
     &copy; 2025 <span>EliteRide LLC</span>. All rights reserved. Site: <a href="https://eliteridect.com">eliteridect.com</a>
 </footer>
 
+<button class="back-to-top" id="backToTop" onclick="scrollToId('hero')">
+    ↑ Top
+</button>
+
 <script>
     // Fare table (adjust numbers as needed)
     const fareTable = {
@@ -1135,6 +1163,16 @@
 
         window.location.href = `mailto:eliterideconnect@gmail.com?subject=${subject}&body=${body}`;
     }
+
+    // Back to top button behavior
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add("show");
+        } else {
+            backToTopBtn.classList.remove("show");
+        }
+    });
 </script>
 </body>
 </html>
