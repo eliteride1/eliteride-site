@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Eliteridect - Sales & Marketing Solutions</title>
+  <title>Eliteride LLC – Luxury Black Car Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Eliteridect helps businesses grow with customer-focused sales and marketing solutions." />
+  <meta name="description" content="Eliteride LLC is a luxury black car service providing professional, on‑time transportation for airport transfers, corporate travel, and special events." />
   <style>
     :root {
-      --primary: #0f62fe;
-      --primary-dark: #0039c7;
-      --accent: #ffb000;
-      --bg: #f5f7fb;
-      --text: #111827;
-      --muted: #6b7280;
-      --white: #ffffff;
-      --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-      --radius-lg: 16px;
-      --radius-md: 10px;
+      --bg: #05070b;
+      --bg-elevated: #0b0f17;
+      --bg-soft: #111827;
+      --primary: #e5b754;
+      --primary-soft: rgba(229, 183, 84, 0.16);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --danger: #f97373;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
     }
 
     * {
@@ -27,14 +29,14 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 52%, #000 100%);
       color: var(--text);
-      background: var(--bg);
       line-height: 1.6;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     /* Layout */
@@ -42,16 +44,16 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(245, 247, 251, 0.9);
+      z-index: 40;
+      background: rgba(5, 7, 11, 0.92);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
     }
 
     .nav {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0.9rem 1.25rem;
+      padding: 0.85rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -61,21 +63,21 @@
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.7rem;
     }
 
     .logo-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 40%;
-      background: radial-gradient(circle at 30% 30%, #ffdd80, #ffb000 45%, #0f62fe 100%);
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #e5b754 45%, #0b0f17 100%);
+      color: #000;
       font-weight: 800;
-      font-size: 1.05rem;
-      box-shadow: var(--shadow);
+      font-size: 1.1rem;
+      box-shadow: 0 0 0 1px rgba(229, 183, 84, 0.6);
     }
 
     .brand-text {
@@ -84,23 +86,24 @@
     }
 
     .brand-text span:first-child {
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
     }
 
     .brand-text span:last-child {
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      font-size: 0.9rem;
+      gap: 1.3rem;
+      font-size: 0.88rem;
     }
 
     .nav-links a {
@@ -113,89 +116,87 @@
     }
 
     .nav-cta {
-      padding: 0.45rem 0.95rem;
+      padding: 0.5rem 1.05rem;
       border-radius: 999px;
-      background: var(--primary);
-      color: #ffffff;
-      font-size: 0.9rem;
+      border: 1px solid var(--primary);
+      background: linear-gradient(135deg, #fbbf24, #e5b754);
+      color: #111827;
+      font-size: 0.86rem;
       font-weight: 600;
-      box-shadow: var(--shadow);
-      border: none;
-    }
-
-    .nav-cta:hover {
-      background: var(--primary-dark);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.35);
     }
 
     main {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 1.75rem 1.25rem 3.5rem;
+      padding: 1.7rem 1.25rem 3.5rem;
     }
 
     section {
-      margin-bottom: 3.25rem;
+      margin-bottom: 3.2rem;
     }
 
     /* Hero */
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 2.25rem;
-      align-items: center;
-      padding: 2.25rem 1.75rem;
-      background: radial-gradient(circle at top left, #e0ebff, #f5f7fb);
+      margin-top: 1.6rem;
+      background: radial-gradient(circle at top left, #111827 0, #020617 40%, #000 100%);
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      margin-top: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 2.1rem;
+      padding: 2rem 1.75rem 2.2rem;
+      overflow: hidden;
+      position: relative;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.25rem 0.75rem;
+      gap: 0.45rem;
+      padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      background: rgba(15, 98, 254, 0.06);
-      color: var(--primary-dark);
-      font-size: 0.74rem;
-      font-weight: 600;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 0.8rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
     }
 
     .hero-badge span.dot {
       width: 7px;
       height: 7px;
-      border-radius: 50%;
-      background: #16a34a;
-      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.2);
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.28);
     }
 
     .hero h1 {
-      font-size: 2.1rem;
+      font-size: 2.05rem;
       line-height: 1.2;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
     }
 
     .hero-highlight {
-      color: var(--primary-dark);
+      color: var(--primary);
     }
 
     .hero p {
-      font-size: 0.98rem;
+      font-size: 0.97rem;
       color: var(--muted);
-      max-width: 34rem;
+      max-width: 32rem;
       margin-bottom: 1.1rem;
     }
 
     .hero-metrics {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 1.4rem;
+      gap: 1.4rem;
+      margin-bottom: 1.3rem;
     }
 
     .metric {
@@ -204,12 +205,13 @@
     }
 
     .metric span:first-child {
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1.1rem;
+      color: var(--primary);
     }
 
     .metric span:last-child {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -218,126 +220,111 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.8rem;
       align-items: center;
     }
 
     .btn-primary {
-      padding: 0.65rem 1.3rem;
+      padding: 0.7rem 1.35rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #ffffff;
-      font-size: 0.95rem;
-      font-weight: 600;
       border: none;
-      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, #facc15, #e5b754);
+      color: #000;
+      font-size: 0.9rem;
+      font-weight: 600;
       cursor: pointer;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.8);
     }
 
     .btn-secondary {
-      padding: 0.6rem 1.1rem;
+      padding: 0.65rem 1.1rem;
       border-radius: 999px;
-      background: #ffffff;
-      color: var(--primary-dark);
-      font-size: 0.9rem;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+      font-size: 0.86rem;
       font-weight: 500;
-      border: 1px solid rgba(148, 163, 184, 0.6);
       cursor: pointer;
     }
 
     .hero-note {
       display: flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.5rem;
       font-size: 0.78rem;
       color: var(--muted);
-      margin-top: 0.45rem;
+      margin-top: 0.5rem;
     }
 
     .hero-note-dot {
       width: 10px;
       height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .hero-card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      padding: 1.35rem 1.25rem;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .hero-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .hero-card-title {
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-
-    .hero-pill {
-      font-size: 0.7rem;
-      padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      background: rgba(22, 163, 74, 0.08);
-      color: #15803d;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      background: var(--primary);
     }
 
-    .pipeline {
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      padding: 0.7rem 0.75rem;
-      background: #f9fafb;
+    .hero-car {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.2rem 1.1rem;
+      background: radial-gradient(circle at top, #111827, #020617 55%, #000 100%);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      overflow: hidden;
     }
 
-    .pipeline-row {
+    .hero-car-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 0.7rem;
       font-size: 0.8rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .pipeline-row:last-child {
-      margin-bottom: 0;
-    }
-
-    .pipeline-label {
       color: var(--muted);
     }
 
-    .pipeline-value {
-      font-weight: 600;
-      color: var(--primary-dark);
+    .hero-car-top strong {
+      color: var(--text);
     }
 
-    .trust-strip {
+    .car-silhouette {
+      width: 100%;
+      height: 150px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 20% 0%, #f9fafb 0, #4b5563 28%, #020617 75%, #000 100%);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.95);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .car-silhouette::before {
+      content: "";
+      position: absolute;
+      inset: 40% -10%;
+      background: linear-gradient(to right, rgba(249,250,251,0.1), rgba(249,250,251,0.6), rgba(249,250,251,0.05));
+      transform: skewX(-20deg);
+      opacity: 0.5;
+    }
+
+    .hero-car-bottom {
+      margin-top: 0.7rem;
       display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
+      justify-content: space-between;
+      align-items: center;
       font-size: 0.78rem;
+      color: var(--muted);
     }
 
-    .trust-icons {
+    .hero-car-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.45rem;
     }
 
-    .trust-pill {
-      padding: 0.35rem 0.7rem;
+    .hero-car-tag {
+      padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      background: #f3f4f6;
-      font-size: 0.76rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.72rem;
       color: var(--muted);
     }
 
@@ -348,7 +335,7 @@
     }
 
     .section-label {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--muted);
@@ -356,156 +343,148 @@
     }
 
     .section-title {
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 600;
     }
 
     .section-lead {
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       color: var(--muted);
-      max-width: 40rem;
+      max-width: 38rem;
       margin-top: 0.3rem;
     }
 
-    /* Services */
+    /* Services / Fleet */
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.3rem;
+      gap: 1.25rem;
     }
 
     .card {
-      background: #ffffff;
+      background: var(--bg-elevated);
       border-radius: var(--radius-md);
-      padding: 1rem 1rem 1.1rem;
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
-      border: 1px solid rgba(226, 232, 240, 1);
+      padding: 1rem 1.1rem 1.1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.7);
     }
 
-    .card-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 12px;
-      background: rgba(15, 98, 254, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-dark);
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
+    .card-header-line {
+      height: 2px;
+      width: 42px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      margin-bottom: 0.55rem;
     }
 
     .card h3 {
       font-size: 0.98rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
     }
 
     .card p {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--muted);
       margin-bottom: 0.6rem;
     }
 
     .card ul {
-      list-style: disc;
-      padding-left: 1.1rem;
+      list-style: none;
+      padding-left: 0;
       font-size: 0.82rem;
       color: var(--muted);
     }
 
     .card li {
-      margin-bottom: 0.2rem;
-    }
-
-    /* Results / Testimonials */
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.3rem;
-    }
-
-    .stat-block {
-      background: #ffffff;
-      border-radius: var(--radius-md);
-      padding: 1rem 1.1rem;
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
-      border: 1px solid rgba(226, 232, 240, 1);
-    }
-
-    .stat-number {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-bottom: 0.2rem;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--muted);
+      display: flex;
+      gap: 0.4rem;
       margin-bottom: 0.3rem;
+    }
+
+    .bullet-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--primary);
+      margin-top: 0.32rem;
+    }
+
+    /* Fleet */
+
+    .fleet-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .fleet-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    .fleet-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .fleet-pill {
+      display: inline-block;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
 
-    .testimonial {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
+    /* Why choose us */
 
-    .testimonial-author {
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .testimonial-role {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* About / Trust */
-
-    .about-layout {
+    .grid-2 {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.4rem;
     }
 
     .list-check {
       list-style: none;
       padding-left: 0;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--muted);
     }
 
     .list-check li {
       display: flex;
-      gap: 0.45rem;
+      gap: 0.5rem;
       margin-bottom: 0.4rem;
     }
 
     .check-icon {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       border-radius: 999px;
-      border: 2px solid #16a34a;
+      border: 2px solid var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
-      color: #16a34a;
+      font-size: 0.75rem;
+      color: var(--primary);
     }
 
     .mini-card {
-      background: #ffffff;
+      background: var(--bg-elevated);
       border-radius: var(--radius-md);
-      padding: 0.85rem 0.95rem;
-      border: 1px solid rgba(226, 232, 240, 1);
-      font-size: 0.85rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.84rem;
       color: var(--muted);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.75);
       margin-bottom: 0.6rem;
     }
 
@@ -516,12 +495,13 @@
     /* Contact */
 
     .contact {
-      background: #ffffff;
+      background: var(--bg-elevated);
       border-radius: var(--radius-lg);
       padding: 1.6rem 1.5rem 1.5rem;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border);
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 1.4rem;
     }
 
@@ -533,28 +513,37 @@
     .field {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.28rem;
     }
 
     .field label {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 500;
     }
 
     .field input,
-    .field textarea {
+    .field textarea,
+    .field select {
       padding: 0.6rem 0.7rem;
-      border-radius: 8px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      font-size: 0.9rem;
+      border-radius: 9px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      color: var(--text);
+      font-size: 0.88rem;
       font-family: inherit;
     }
 
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: rgba(148, 163, 184, 0.8);
+    }
+
     .field input:focus,
-    .field textarea:focus {
+    .field textarea:focus,
+    .field select:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 1px rgba(15, 98, 254, 0.2);
+      box-shadow: 0 0 0 1px rgba(229, 183, 84, 0.4);
     }
 
     .field textarea {
@@ -562,17 +551,22 @@
       resize: vertical;
     }
 
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
     .contact-info {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--muted);
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.45rem;
     }
 
     .contact-info-item {
       display: flex;
-      gap: 0.4rem;
+      gap: 0.45rem;
     }
 
     .contact-label {
@@ -581,39 +575,43 @@
     }
 
     footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.3);
-      padding: 1.1rem 1.25rem 2rem;
-      font-size: 0.78rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1.2rem 1.25rem 2rem;
+      font-size: 0.76rem;
       color: var(--muted);
+      background: #020617;
     }
 
     .footer-inner {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 0.6rem;
+      gap: 0.7rem;
       align-items: center;
     }
 
     /* Responsive */
 
-    @media (max-width: 880px) {
+    @media (max-width: 900px) {
       .nav-links {
         display: none;
       }
 
       .hero,
       .contact,
-      .about-layout,
       .grid-3,
       .grid-2 {
         grid-template-columns: minmax(0, 1fr);
       }
 
       .hero {
-        padding: 1.7rem 1.2rem;
+        padding: 1.7rem 1.35rem;
+      }
+
+      .hero-car {
+        order: -1;
       }
     }
 
@@ -625,10 +623,6 @@
       .hero h1 {
         font-size: 1.6rem;
       }
-
-      .hero-metrics {
-        gap: 1rem;
-      }
     }
   </style>
 </head>
@@ -639,16 +633,16 @@
       <div class="nav-left">
         <div class="logo-mark">E</div>
         <div class="brand-text">
-          <span>Eliteridect</span>
-          <span>Customer-first growth</span>
+          <span>Eliteride LLC</span>
+          <span>Luxury Black Car</span>
         </div>
       </div>
       <div class="nav-links">
         <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#results">Results</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#why">Why us</a>
         <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#contact">Get started</a>
+        <a class="nav-cta" href="#contact">Book a ride</a>
       </div>
     </div>
   </header>
@@ -659,68 +653,57 @@
       <div>
         <div class="hero-badge">
           <span class="dot"></span>
-          <span>Sales & marketing that feels human</span>
+          <span>Professional, on‑time, discreet</span>
         </div>
         <h1>
-          Turn every interaction into
-          <span class="hero-highlight">a loyal customer.</span>
+          Luxury black car service for
+          <span class="hero-highlight">flawless, stress‑free rides.</span>
         </h1>
         <p>
-          Eliteridect helps growing businesses design customer‑friendly sales and marketing systems
-          that win more leads, keep more customers, and feel good for everyone involved.
+          Eliteride LLC provides premium black car transportation with professional chauffeurs,
+          clean late‑model vehicles, and on‑time service for airport transfers, corporate travel, and special events.
         </p>
 
         <div class="hero-metrics">
           <div class="metric">
-            <span>+30%</span>
-            <span>Average lift in conversions</span>
-          </div>
-          <div class="metric">
             <span>24/7</span>
-            <span>Customer‑ready experience</span>
+            <span>Advance bookings</span>
           </div>
           <div class="metric">
-            <span>3 steps</span>
-            <span>From visit to booked call</span>
+            <span>On‑time</span>
+            <span>Pickup guarantee</span>
+          </div>
+          <div class="metric">
+            <span>Private</span>
+            <span>Door‑to‑door service</span>
           </div>
         </div>
 
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Schedule a free call</a>
+          <a href="#contact" class="btn-primary">Book your next ride</a>
           <a href="#services" class="btn-secondary">View services</a>
         </div>
         <div class="hero-note">
           <span class="hero-note-dot"></span>
-          <span>Your customers know what to do on every page.</span>
+          <span>No shared rides. No surprises. Just professional, black car service.</span>
         </div>
       </div>
 
-      <div class="hero-card" aria-hidden="true">
-        <div class="hero-card-header">
-          <div class="hero-card-title">Customer-friendly pipeline</div>
-          <div class="hero-pill">Live preview</div>
+      <div class="hero-car" aria-hidden="true">
+        <div class="hero-car-top">
+          <span><strong>Featured vehicle</strong> · Luxury black sedan</span>
+          <span>Premium leather • Wi‑Fi • Bottled water</span>
         </div>
-        <div class="pipeline">
-          <div class="pipeline-row">
-            <span class="pipeline-label">Visitors guided</span>
-            <span class="pipeline-value">100%</span>
+        <div class="car-silhouette"></div>
+        <div class="hero-car-bottom">
+          <div class="hero-car-tags">
+            <span class="hero-car-tag">Airport transfers</span>
+            <span class="hero-car-tag">Corporate travel</span>
+            <span class="hero-car-tag">Events & nights out</span>
           </div>
-          <div class="pipeline-row">
-            <span class="pipeline-label">Drop‑offs fixed</span>
-            <span class="pipeline-value">Key pages only</span>
-          </div>
-          <div class="pipeline-row">
-            <span class="pipeline-label">Next step clarity</span>
-            <span class="pipeline-value">One clear CTA</span>
-          </div>
-        </div>
-        <div class="trust-strip">
-          <span>Focused on simple journeys that feel natural:</span>
-          <div class="trust-icons">
-            <span class="trust-pill">Home to contact in 3 clicks</span>
-            <span class="trust-pill">Plain‑language messaging</span>
-            <span class="trust-pill">Mobile‑first layouts</span>
-          </div>
+          <span style="font-size:0.76rem; color:var(--muted);">
+            Example image area – replace with a real photo when you are ready.
+          </span>
         </div>
       </div>
     </section>
@@ -729,140 +712,152 @@
     <section id="services">
       <div class="section-header">
         <div class="section-label">Services</div>
-        <div class="section-title">Make your website work like a top rep.</div>
+        <div class="section-title">Where do you need to go?</div>
         <p class="section-lead">
-          Clear navigation, simple messaging, and friction‑free forms so visitors can understand you,
-          trust you, and contact you without confusion.
+          From early‑morning airport runs to late‑night event pickups, Eliteride LLC delivers
+          professional, private transportation tailored to your schedule.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card">
-          <div class="card-icon">⇢</div>
-          <h3>Customer‑friendly site structure</h3>
+          <div class="card-header-line"></div>
+          <h3>Airport transfers</h3>
           <p>
-            Organize your pages so visitors can find what they need in seconds on desktop or mobile.
+            Reliable airport drop‑off and pick‑up with flight tracking, meet‑and‑greet options, and help with luggage.
           </p>
           <ul>
-            <li>Simple top navigation</li>
-            <li>Clear section headings</li>
-            <li>Logical scrolling journey</li>
+            <li><span class="bullet-dot"></span><span>Pickup window planned around your flight time.</span></li>
+            <li><span class="bullet-dot"></span><span>Text updates when your driver is on the way.</span></li>
+            <li><span class="bullet-dot"></span><span>Help with bags from door to vehicle.</span></li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-icon">💬</div>
-          <h3>Plain‑language messaging</h3>
+          <div class="card-header-line"></div>
+          <h3>Corporate & business travel</h3>
           <p>
-            Replace jargon with human‑sounding copy that explains what you do, who you serve, and why it matters.
+            Professional transportation for meetings, client visits, and team events, with consistent service for repeat riders.
           </p>
           <ul>
-            <li>Direct, benefit‑driven headlines</li>
-            <li>Short, scannable paragraphs</li>
-            <li>Calls‑to‑action that feel natural</li>
+            <li><span class="bullet-dot"></span><span>Discreet, business‑appropriate chauffeurs.</span></li>
+            <li><span class="bullet-dot"></span><span>Comfortable, quiet vehicles for working on the go.</span></li>
+            <li><span class="bullet-dot"></span><span>Pre‑scheduled rides to stay on time all day.</span></li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-icon">✔</div>
-          <h3>Conversion‑ready contact flow</h3>
+          <div class="card-header-line"></div>
+          <h3>Events & nights out</h3>
           <p>
-            Remove friction from your forms and contact options so more visitors become real conversations.
+            Arrive relaxed and on time for dinners, concerts, weddings, and special occasions – without parking or driving stress.
           </p>
           <ul>
-            <li>Focused contact forms</li>
-            <li>Multiple contact options (email, phone)</li>
-            <li>Confirmation and next steps</li>
+            <li><span class="bullet-dot"></span><span>Point‑to‑point or hourly booking options.</span></li>
+            <li><span class="bullet-dot"></span><span>Drop‑off at the door and pickup when you are ready.</span></li>
+            <li><span class="bullet-dot"></span><span>Ideal for dates, celebrations, and VIP guests.</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Results / Testimonials -->
-    <section id="results">
+    <!-- Fleet -->
+    <section id="fleet">
       <div class="section-header">
-        <div class="section-label">Results</div>
-        <div class="section-title">Designed to be clear, fast, and trustworthy.</div>
+        <div class="section-label">Fleet</div>
+        <div class="section-title">Comfortable, clean, and ready.</div>
         <p class="section-lead">
-          The focus is on small, practical improvements that make your website easier to use and more
-          likely to turn visitors into customers.
+          Every vehicle is carefully maintained, professionally cleaned, and driven by a trained chauffeur
+          so your ride feels as good as it looks.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="fleet-tag">Sedan</span>
+          <div class="fleet-name">Executive black sedan</div>
+          <div class="fleet-meta">Up to 3 passengers · 2–3 bags</div>
+          <span class="fleet-pill">Perfect for airport & solo travel</span>
+          <p style="font-size:0.84rem; color:var(--muted); margin-top:0.5rem;">
+            Ideal for business travelers and individuals who want a quiet, private ride.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="fleet-tag">SUV</span>
+          <div class="fleet-name">Luxury black SUV</div>
+          <div class="fleet-meta">Up to 6 passengers · luggage room</div>
+          <span class="fleet-pill">Great for families & groups</span>
+          <p style="font-size:0.84rem; color:var(--muted); margin-top:0.5rem;">
+            Extra space and comfort for groups, airport runs, and nights out with friends.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="fleet-tag">By request</span>
+          <div class="fleet-name">Special requests</div>
+          <div class="fleet-meta">Sprinter / premium options</div>
+          <span class="fleet-pill">Ask about availability</span>
+          <p style="font-size:0.84rem; color:var(--muted); margin-top:0.5rem;">
+            Need something specific for an event or VIP guest? Ask about custom options.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us -->
+    <section id="why">
+      <div class="section-header">
+        <div class="section-label">Why choose Eliteride</div>
+        <div class="section-title">Luxury rides, simple experience.</div>
+        <p class="section-lead">
+          The goal is straightforward: make every ride smooth, on time, and comfortable so you can
+          relax, focus, or celebrate while Eliteride handles the road.
         </p>
       </div>
 
       <div class="grid-2">
-        <div class="stat-block">
-          <div class="stat-number">2x</div>
-          <div class="stat-label">More visitors reaching contact</div>
-          <p class="testimonial">
-            Simple navigation, clearer CTAs, and shorter forms consistently help more visitors reach
-            your contact page instead of bouncing.
-          </p>
-        </div>
-
-        <div class="stat-block">
-          <p class="testimonial">
-            “Everything is easier to understand now. Visitors know who we are, what we do, and the
-            next step to take in less than 10 seconds.”
-          </p>
-          <div class="testimonial-author">Sample client quote</div>
-          <div class="testimonial-role">Customer‑focused business owner</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About / Trust -->
-    <section id="about">
-      <div class="section-header">
-        <div class="section-label">About</div>
-        <div class="section-title">Built around how real customers decide.</div>
-        <p class="section-lead">
-          Eliteridect combines clean design, clear messaging, and simple flows so your website
-          supports your sales efforts instead of getting in the way.
-        </p>
-      </div>
-
-      <div class="about-layout">
         <div>
           <ul class="list-check">
             <li>
               <span class="check-icon">✓</span>
-              <span>Visitors can tell in seconds if they are in the right place.</span>
+              <span>Professional, courteous chauffeurs who respect your time and privacy.</span>
             </li>
             <li>
               <span class="check-icon">✓</span>
-              <span>Every main page has one obvious next step.</span>
+              <span>Easy, clear communication before pickup so you always know where your driver is.</span>
             </li>
             <li>
               <span class="check-icon">✓</span>
-              <span>Language focuses on outcomes, not internal buzzwords.</span>
+              <span>Clean, comfortable vehicles with a luxury feel on every ride.</span>
             </li>
             <li>
               <span class="check-icon">✓</span>
-              <span>Mobile users get the same clarity as desktop visitors.</span>
+              <span>Flexible scheduling for airports, offices, hotels, homes, and venues.</span>
             </li>
           </ul>
         </div>
 
         <div>
           <div class="mini-card">
-            <strong>Who Eliteridect is for:</strong><br />
-            Growing businesses that want their website to feel like a helpful guide, not a confusing brochure.
+            <strong>Who we serve:</strong><br />
+            Business travelers, executives, families, visitors, and anyone who wants a reliable, luxury black car experience.
           </div>
           <div class="mini-card">
-            <strong>How it works:</strong><br />
-            Audit the current experience, simplify the journey, and update copy and layout to make the next step obvious.
+            <strong>How to get started:</strong><br />
+            Send your pickup location, destination, date, and time, and receive a confirmation with your ride details.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact / Booking -->
     <section id="contact">
       <div class="section-header">
-        <div class="section-label">Contact</div>
-        <div class="section-title">Ready to make your website more customer‑friendly?</div>
+        <div class="section-label">Book a ride</div>
+        <div class="section-title">Tell us about your trip.</div>
         <p class="section-lead">
-          Share a few details and you will get a response with clear next steps and timing.
+          Share your details below and you will receive a response with pricing and confirmation options.
         </p>
       </div>
 
@@ -877,38 +872,59 @@
             <input id="email" type="email" placeholder="you@example.com" />
           </div>
           <div class="field">
-            <label for="company">Business / company</label>
-            <input id="company" type="text" placeholder="Your business name" />
+            <label for="phone">Mobile number</label>
+            <input id="phone" type="tel" placeholder="(000) 000‑0000" />
           </div>
           <div class="field">
-            <label for="message">What would you like to improve?</label>
-            <textarea id="message" placeholder="Briefly describe your current website and goals."></textarea>
+            <label for="pickup">Pickup location</label>
+            <input id="pickup" type="text" placeholder="Address, hotel, or airport" />
           </div>
-          <button type="submit" class="btn-primary">Send message</button>
-          <small style="font-size:0.75rem; color:var(--muted);">
-            This form is a visual example. Connect it to your preferred email or form tool to receive submissions.
-          </small>
+          <div class="field">
+            <label for="dropoff">Drop‑off location</label>
+            <input id="dropoff" type="text" placeholder="Address, hotel, or airport" />
+          </div>
+          <div class="field">
+            <label for="date">Date & time</label>
+            <input id="date" type="text" placeholder="MM/DD/YYYY – preferred pickup time" />
+          </div>
+          <div class="field">
+            <label for="service">Type of service</label>
+            <select id="service">
+              <option>Airport transfer</option>
+              <option>Corporate / business</option>
+              <option>Event / night out</option>
+              <option>Other (describe below)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="details">Additional details</label>
+            <textarea id="details" placeholder="Number of passengers, flight number, special requests, etc."></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Request a quote</button>
+          <p class="form-note">
+            This form is a visual example. Connect it to your preferred booking or email system to receive requests.
+          </p>
         </form>
 
         <div class="contact-info">
           <div class="contact-info-item">
-            <span class="contact-label">Email:</span>
-            <span>hello@eliteridect.com</span>
-          </div>
-          <div class="contact-info-item">
-            <span class="contact-label">Phone:</span>
+            <span class="contact-label">Call or text:</span>
             <span>(000) 000‑0000</span>
           </div>
           <div class="contact-info-item">
-            <span class="contact-label">Hours:</span>
-            <span>Monday–Friday, 9am–5pm (local time)</span>
+            <span class="contact-label">Email:</span>
+            <span>rides@eliteride.com</span>
           </div>
           <div class="contact-info-item">
-            <span class="contact-label">Location:</span>
-            <span>Your city or region</span>
+            <span class="contact-label">Service area:</span>
+            <span>Your city / region here</span>
           </div>
-          <p>
-            Update these details with your real contact information so visitors trust that you are reachable.
+          <div class="contact-info-item">
+            <span class="contact-label">Hours:</span>
+            <span>Bookings accepted 24/7 with advance notice</span>
+          </div>
+          <p style="margin-top:0.4rem;">
+            Update these details with your real contact information so riders can book directly.
           </p>
         </div>
       </div>
@@ -917,13 +933,12 @@
 
   <footer>
     <div class="footer-inner">
-      <span>© <span id="year"></span> Eliteridect. All rights reserved.</span>
-      <span>Designed to be clear, simple, and customer‑friendly.</span>
+      <span>© <span id="year"></span> Eliteride LLC. All rights reserved.</span>
+      <span>Professional, luxury black car service.</span>
     </div>
   </footer>
 
   <script>
-    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
