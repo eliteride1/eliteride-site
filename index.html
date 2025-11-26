@@ -207,7 +207,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             text-align: center;
@@ -422,6 +422,79 @@
             display: block;
         }
 
+        /* Quote Section */
+        .quote {
+            background: var(--light);
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+        }
+
+        .quote-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.2);
+        }
+
+        .quote-result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 3px;
+            display: none;
+        }
+
+        .quote-result.active {
+            display: block;
+        }
+
+        .quote-price {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
         /* Gallery Section */
         .gallery {
             background: var(--light);
@@ -527,7 +600,7 @@
 
         /* CTA Section */
         .cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             color: var(--light);
             text-align: center;
         }
@@ -723,6 +796,10 @@
                 flex-direction: column;
                 gap: 20px;
             }
+
+            .quote-form {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 576px) {
@@ -753,6 +830,10 @@
             .logo-img {
                 height: 40px;
             }
+
+            .quote-container {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -775,7 +856,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#fleet">Our Fleet</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#quote">Instant Quote</a></li>
                     <li><a href="#contact" class="btn btn-outline">Book Now</a></li>
                 </ul>
             </nav>
@@ -790,7 +871,7 @@
                 <p>Experience premium comfort and style with EliteRideCT's luxury Chevy Suburban and Cadillac Escalade services for all your transportation needs.</p>
                 <div class="hero-btns">
                     <a href="#fleet" class="btn">View Our Fleet</a>
-                    <a href="#contact" class="btn btn-outline">Reserve Your Ride</a>
+                    <a href="#quote" class="btn btn-outline">Get Instant Quote</a>
                 </div>
                 
                 <div class="trust-indicators">
@@ -826,7 +907,7 @@
                     <div class="service-content">
                         <h3>Airport Transfers</h3>
                         <p>Timely and comfortable transfers to all major airports with professional chauffeurs and meet & greet service for a stress-free travel experience.</p>
-                        <a href="#contact" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                        <a href="#quote" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -836,7 +917,7 @@
                     <div class="service-content">
                         <h3>Corporate Events</h3>
                         <p>Impress clients and colleagues with our executive transportation services for business meetings, conferences, and corporate functions.</p>
-                        <a href="#contact" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                        <a href="#quote" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -846,7 +927,7 @@
                     <div class="service-content">
                         <h3>Weddings & Special Events</h3>
                         <p>Make your celebration unforgettable with our luxury transportation. Timely, elegant, and tailored to create perfect memories on your special day.</p>
-                        <a href="#contact" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                        <a href="#quote" class="service-link">Get Quote <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -875,12 +956,12 @@
                             <li><i class="fas fa-check"></i> Ample luggage space</li>
                         </ul>
                         <span class="fleet-price">From $125/hour</span>
-                        <a href="#contact" class="btn">Reserve This Vehicle</a>
+                        <a href="#quote" class="btn">Reserve This Vehicle</a>
                     </div>
                 </div>
                 <div class="fleet-card">
                     <div class="fleet-img">
-                        <img src="https://images.unsplash.com/photo-1621330396173-e41b1cafd163?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Chevy Suburban">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Chevy Suburban">
                     </div>
                     <div class="fleet-content">
                         <h3>Chevy Suburban</h3>
@@ -892,8 +973,64 @@
                             <li><i class="fas fa-check"></i> Generous cargo capacity</li>
                         </ul>
                         <span class="fleet-price">From $115/hour</span>
-                        <a href="#contact" class="btn">Reserve This Vehicle</a>
+                        <a href="#quote" class="btn">Reserve This Vehicle</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instant Quote Section -->
+    <section class="quote" id="quote">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get An Instant Quote</h2>
+                <p>Fill out the form below for a quick estimate on your luxury transportation needs</p>
+            </div>
+            <div class="quote-container">
+                <form id="quote-form" class="quote-form">
+                    <div class="form-group">
+                        <label for="vehicle">Select Vehicle</label>
+                        <select id="vehicle" required>
+                            <option value="">Choose a vehicle</option>
+                            <option value="suburban">Chevy Suburban - $115/hour</option>
+                            <option value="escalade">Cadillac Escalade - $125/hour</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Type</label>
+                        <select id="service" required>
+                            <option value="">Select service</option>
+                            <option value="airport">Airport Transfer</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="special">Special Occasion</option>
+                            <option value="point">Point-to-Point</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="passengers">Number of Passengers</label>
+                        <input type="number" id="passengers" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hours">Estimated Hours</label>
+                        <input type="number" id="hours" min="1" max="24" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="details">Additional Details</label>
+                        <textarea id="details" rows="4" placeholder="Tell us about your specific needs..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn" style="width: 100%;">Calculate Quote</button>
+                    </div>
+                </form>
+                
+                <div id="quote-result" class="quote-result">
+                    <h3>Your Estimated Quote</h3>
+                    <div class="quote-price" id="quote-price">$0</div>
+                    <p id="quote-details">Based on your selections</p>
+                    <p><small>This is an estimate. Final pricing may vary based on specific requirements.</small></p>
+                    <a href="#contact" class="btn" style="margin-top: 15px;">Book Now</a>
                 </div>
             </div>
         </div>
@@ -1003,7 +1140,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#fleet">Our Fleet</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#quote">Instant Quote</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
@@ -1072,6 +1209,47 @@
                     nav.classList.remove('active');
                 }
             });
+        });
+
+        // Instant Quote Calculator
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const vehicle = document.getElementById('vehicle').value;
+            const service = document.getElementById('service').value;
+            const passengers = parseInt(document.getElementById('passengers').value);
+            const hours = parseInt(document.getElementById('hours').value);
+            
+            if (!vehicle || !service || !passengers || !hours) {
+                alert('Please fill out all required fields');
+                return;
+            }
+            
+            // Base pricing
+            let baseRate = 0;
+            if (vehicle === 'suburban') baseRate = 115;
+            if (vehicle === 'escalade') baseRate = 125;
+            
+            // Service multipliers
+            let serviceMultiplier = 1;
+            if (service === 'wedding') serviceMultiplier = 1.2;
+            if (service === 'corporate') serviceMultiplier = 1.1;
+            
+            // Calculate total
+            let total = baseRate * hours * serviceMultiplier;
+            
+            // Minimum charge
+            if (total < 150) total = 150;
+            
+            // Display result
+            document.getElementById('quote-price').textContent = '$' + total.toFixed(0);
+            document.getElementById('quote-details').textContent = 
+                `For ${hours} hour${hours > 1 ? 's' : ''} in a ${vehicle === 'suburban' ? 'Chevy Suburban' : 'Cadillac Escalade'} for ${service} service`;
+            
+            document.getElementById('quote-result').classList.add('active');
+            
+            // Scroll to result
+            document.getElementById('quote-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
 
         // Add loading animation for elements when they come into view
