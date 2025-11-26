@@ -137,21 +137,26 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--light);
+            display: flex;
+            align-items: center;
             text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
             display: flex;
             align-items: center;
         }
 
-        .logo span {
-            color: var(--accent);
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--light);
+            margin-left: 10px;
         }
 
-        .logo i {
-            margin-right: 10px;
-            font-size: 1.5rem;
+        .logo-text span {
+            color: var(--accent);
         }
 
         nav ul {
@@ -202,7 +207,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             text-align: center;
@@ -415,6 +420,51 @@
             font-weight: 600;
             margin: 20px 0;
             display: block;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
         }
 
         /* Testimonials */
@@ -695,6 +745,14 @@
             .service-content, .fleet-content {
                 padding: 25px;
             }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -702,7 +760,13 @@
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo"><i class="fas fa-crown"></i>Elite<span>Ride</span>CT</a>
+            <a href="#" class="logo">
+                <div class="logo-img">
+                    <!-- Your logo would go here - using text representation for now -->
+                    <div style="color: var(--accent); font-weight: bold; font-size: 1.8rem; font-family: 'Playfair Display', serif;">ER</div>
+                </div>
+                <div class="logo-text">Elite<span>Ride</span>CT</div>
+            </a>
             <div class="mobile-toggle" id="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -711,7 +775,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#fleet">Our Fleet</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact" class="btn btn-outline">Book Now</a></li>
                 </ul>
             </nav>
@@ -722,10 +786,10 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Exquisite Luxury Transportation in Connecticut</h1>
-                <p>Experience the pinnacle of comfort and style with EliteRideCT's premium chauffeur services for corporate events, airport transfers, weddings, and special occasions.</p>
+                <h1>Luxury Transportation in Connecticut</h1>
+                <p>Experience premium comfort and style with EliteRideCT's luxury Chevy Suburban and Cadillac Escalade services for all your transportation needs.</p>
                 <div class="hero-btns">
-                    <a href="#fleet" class="btn">Explore Our Fleet</a>
+                    <a href="#fleet" class="btn">View Our Fleet</a>
                     <a href="#contact" class="btn btn-outline">Reserve Your Ride</a>
                 </div>
                 
@@ -752,7 +816,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Premium Services</h2>
-                <p>Tailored transportation solutions designed for discerning clients</p>
+                <p>Professional transportation solutions for every occasion</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -761,7 +825,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Airport Transfers</h3>
-                        <p>Seamless and punctual transfers to all major airports with professional chauffeurs, flight tracking, and meet & greet service for a stress-free travel experience.</p>
+                        <p>Timely and comfortable transfers to all major airports with professional chauffeurs and meet & greet service for a stress-free travel experience.</p>
                         <a href="#contact" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -771,7 +835,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Corporate Events</h3>
-                        <p>Impress clients and colleagues with our executive transportation services for business meetings, conferences, and corporate functions throughout Connecticut.</p>
+                        <p>Impress clients and colleagues with our executive transportation services for business meetings, conferences, and corporate functions.</p>
                         <a href="#contact" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -781,7 +845,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Weddings & Special Events</h3>
-                        <p>Make your celebration unforgettable with our luxury wedding transportation. Timely, elegant, and tailored to create perfect memories on your special day.</p>
+                        <p>Make your celebration unforgettable with our luxury transportation. Timely, elegant, and tailored to create perfect memories on your special day.</p>
                         <a href="#contact" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -799,53 +863,72 @@
             <div class="fleet-grid">
                 <div class="fleet-card">
                     <div class="fleet-img">
-                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mercedes-Benz S-Class">
-                    </div>
-                    <div class="fleet-content">
-                        <h3>Mercedes-Benz S-Class</h3>
-                        <ul class="fleet-features">
-                            <li><i class="fas fa-check"></i> Seats up to 3 passengers comfortably</li>
-                            <li><i class="fas fa-check"></i> Premium Nappa leather interior</li>
-                            <li><i class="fas fa-check"></i> Dual-zone climate control</li>
-                            <li><i class="fas fa-check"></i> Complimentary water & high-speed WiFi</li>
-                            <li><i class="fas fa-check"></i> Professional chauffeur</li>
-                        </ul>
-                        <span class="fleet-price">From $95/hour</span>
-                        <a href="#contact" class="btn">Reserve This Vehicle</a>
-                    </div>
-                </div>
-                <div class="fleet-card">
-                    <div class="fleet-img">
-                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="BMW 7 Series">
-                    </div>
-                    <div class="fleet-content">
-                        <h3>BMW 7 Series</h3>
-                        <ul class="fleet-features">
-                            <li><i class="fas fa-check"></i> Executive seating for 3 passengers</li>
-                            <li><i class="fas fa-check"></i> Handcrafted luxury interior</li>
-                            <li><i class="fas fa-check"></i> Advanced entertainment system</li>
-                            <li><i class="fas fa-check"></i> Complimentary refreshments</li>
-                            <li><i class="fas fa-check"></i> Professional chauffeur</li>
-                        </ul>
-                        <span class="fleet-price">From $105/hour</span>
-                        <a href="#contact" class="btn">Reserve This Vehicle</a>
-                    </div>
-                </div>
-                <div class="fleet-card">
-                    <div class="fleet-img">
                         <img src="https://images.unsplash.com/photo-1621330396173-e41b1cafd163?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cadillac Escalade">
                     </div>
                     <div class="fleet-content">
                         <h3>Cadillac Escalade</h3>
                         <ul class="fleet-features">
                             <li><i class="fas fa-check"></i> Spacious luxury SUV seats up to 6</li>
-                            <li><i class="fas fa-check"></i> Premium sound system</li>
+                            <li><i class="fas fa-check"></i> Premium leather interior</li>
+                            <li><i class="fas fa-check"></i> Advanced entertainment system</li>
                             <li><i class="fas fa-check"></i> Dual-zone climate control</li>
                             <li><i class="fas fa-check"></i> Ample luggage space</li>
-                            <li><i class="fas fa-check"></i> Professional chauffeur</li>
                         </ul>
                         <span class="fleet-price">From $125/hour</span>
                         <a href="#contact" class="btn">Reserve This Vehicle</a>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-img">
+                        <img src="https://images.unsplash.com/photo-1621330396173-e41b1cafd163?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Chevy Suburban">
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Chevy Suburban</h3>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> Roomy interior seats up to 7 passengers</li>
+                            <li><i class="fas fa-check"></i> Comfortable leather seating</li>
+                            <li><i class="fas fa-check"></i> Premium sound system</li>
+                            <li><i class="fas fa-check"></i> Climate control throughout</li>
+                            <li><i class="fas fa-check"></i> Generous cargo capacity</li>
+                        </ul>
+                        <span class="fleet-price">From $115/hour</span>
+                        <a href="#contact" class="btn">Reserve This Vehicle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Fleet in Action</h2>
+                <p>See our luxury vehicles and professional chauffeurs at work</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury vehicle at event">
+                    <div class="gallery-overlay">
+                        <h4>Wedding Transportation</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Professional chauffeur">
+                    <div class="gallery-overlay">
+                        <h4>Professional Chauffeur Service</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Airport pickup">
+                    <div class="gallery-overlay">
+                        <h4>Airport Transfers</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1567602901358-5ba17615aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate event">
+                    <div class="gallery-overlay">
+                        <h4>Corporate Events</h4>
                     </div>
                 </div>
             </div>
@@ -861,7 +944,7 @@
             </div>
             <div class="testimonial-slider">
                 <div class="testimonial">
-                    <p class="testimonial-text">"EliteRideCT provided exceptional service for our corporate event. The vehicles were immaculate, and the chauffeurs were professional, punctual, and knowledgeable. They made transportation the easiest part of our event planning. Highly recommended for any business transportation needs in Connecticut."</p>
+                    <p class="testimonial-text">"EliteRideCT provided exceptional service for our corporate event. The Cadillac Escalade was immaculate, and the chauffeur was professional, punctual, and knowledgeable. They made transportation the easiest part of our event planning. Highly recommended for any business transportation needs in Connecticut."</p>
                     <div class="testimonial-author">
                         <div class="author-img">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson">
@@ -920,7 +1003,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#fleet">Our Fleet</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
@@ -945,7 +1028,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 EliteRideCT. All Rights Reserved. | Crafted with <i class="fas fa-heart"></i> for Discerning Clients</p>
+                <p>&copy; 2023 EliteRide LLC. All Rights Reserved. | Crafted with <i class="fas fa-heart"></i> for Discerning Clients</p>
             </div>
         </div>
     </footer>
@@ -1007,7 +1090,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.service-card, .fleet-card, .testimonial').forEach(el => {
+        document.querySelectorAll('.service-card, .fleet-card, .testimonial, .gallery-item').forEach(el => {
             el.style.opacity = 0;
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
