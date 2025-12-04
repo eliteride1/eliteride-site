@@ -643,12 +643,19 @@
             }
         }
     </style>
+    <!-- Injected favicon + preload -->
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="preload" as="image" href="assets/eliteride-logo-256.png">
 </head>
 <body>
 <header>
     <div class="nav-inner">
         <div class="logo-wrap">
-            <img src="EliteRide_Logo.png" alt="EliteRide Logo" />
+            <!-- Replaced with picture for WebP + PNG fallback -->
+            <picture>
+                <source srcset="assets/eliteride-logo-256.webp" type="image/webp">
+                <img src="assets/eliteride-logo-256.png" alt="EliteRide LLC logo" />
+            </picture>
             <div class="logo-text">EliteRide · Executive Chauffeur</div>
         </div>
         <nav>
@@ -1159,7 +1166,8 @@
             "",
             "Sent from EliteRide website booking form."
         ];
-        const body = encodeURIComponent(bodyLines.join("\n"));
+        const body = encodeURIComponent(bodyLines.join("
+"));
 
         window.location.href = `mailto:eliterideconnect@gmail.com?subject=${subject}&body=${body}`;
     }
