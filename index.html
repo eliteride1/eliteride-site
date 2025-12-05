@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EliteRide – Executive Chauffeur Service</title>
-    <meta name="description" content="EliteRide LLC provides luxury executive transportation, airport transfers, and private chauffeur services across Fairfield County, Westchester, and NYC Metro." />
+    <title>EliteRide – Executive Chauffeur Service | Fairfield County & NYC Airports</title>
+    <meta name="description" content="EliteRide LLC provides luxury executive SUV transportation for airport transfers, corporate travel, weddings, and private occasions across Fairfield County, Westchester, and NYC Metro." />
+    <link rel="icon" href="assets/favicon.ico" />
     <style>
         :root {
             --bg-dark: #050505;
@@ -32,6 +33,51 @@
         a {
             color: inherit;
             text-decoration: none;
+        }
+
+        /* Top contact bar */
+        .top-bar {
+            background: #000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.8rem;
+        }
+
+        .top-bar-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 6px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--muted);
+        }
+
+        .top-bar-inner span strong {
+            color: var(--accent-soft);
+        }
+
+        .top-bar-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .top-bar-link {
+            font-size: 0.8rem;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+        }
+
+        .top-bar-cta {
+            border-radius: 999px;
+            border: 1px solid rgba(212, 175, 55, 0.7);
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+            color: #000;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         /* Header / Nav */
@@ -102,6 +148,18 @@
             width: 100%;
         }
 
+        .nav-cta {
+            margin-left: 10px;
+            border-radius: 999px;
+            padding: 7px 14px;
+            border: 1px solid var(--accent);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: rgba(212, 175, 55, 0.12);
+            color: var(--accent-soft);
+        }
+
         /* Hero */
         .hero {
             position: relative;
@@ -142,13 +200,31 @@
             letter-spacing: 0.2em;
             font-size: 0.72rem;
             color: var(--accent-soft);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .hero-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            border-radius: 999px;
+            padding: 4px 10px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--accent-soft);
+            background: rgba(0, 0, 0, 0.6);
         }
 
         .hero h1 {
-            font-size: clamp(2.3rem, 4vw, 3.1rem);
-            margin: 0 0 14px;
-            line-height: 1.1;
+            font-size: clamp(2.4rem, 4vw, 3.2rem);
+            margin: 0 0 12px;
+            line-height: 1.08;
         }
 
         .hero h1 span {
@@ -158,9 +234,9 @@
         .hero-subtitle {
             font-size: 0.98rem;
             color: var(--muted);
-            max-width: 520px;
+            max-width: 540px;
             line-height: 1.6;
-            margin-bottom: 22px;
+            margin-bottom: 18px;
         }
 
         .hero-actions {
@@ -224,7 +300,7 @@
             display: block;
             width: 100%;
             height: 100%;
-            max-height: 360px;
+            max-height: 380px;
             object-fit: cover;
             filter: saturate(1.05);
         }
@@ -325,7 +401,7 @@
             line-height: 1.6;
         }
 
-        /* Fleet images */
+        /* Fleet / gallery images */
         .fleet-image {
             position: relative;
             border-radius: 18px;
@@ -352,7 +428,53 @@
             border: 1px solid rgba(212, 175, 55, 0.5);
         }
 
-        /* Rates / Quote section */
+        /* 3-step strip */
+        .steps-strip {
+            background: #000;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .steps-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 26px 18px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--accent-soft);
+        }
+
+        .step-body-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: var(--accent-soft);
+        }
+
+        .step-body-text {
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        /* Quote / Rates section */
         .quote-layout {
             display: grid;
             grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -506,7 +628,43 @@
             font-weight: 600;
         }
 
-        /* Legal / Policies */
+        /* Pay Now section */
+        .pay-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .pay-list {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .pay-list ol {
+            padding-left: 18px;
+        }
+
+        .pay-note {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        .pay-actions {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn-small {
+            font-size: 0.78rem;
+            padding: 8px 14px;
+        }
+
+        /* Policies / Legal */
         .policies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -545,6 +703,34 @@
             margin-top: 14px;
         }
 
+        /* Service areas & reviews */
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .pill {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: var(--muted);
+        }
+
+        .review-quote {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .review-author {
+            font-size: 0.82rem;
+            color: var(--accent-soft);
+        }
+
         footer {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding: 18px 18px 20px;
@@ -563,7 +749,7 @@
             text-decoration-thickness: 1px;
         }
 
-        /* Back to top button (simple) */
+        /* Back to top button */
         .back-to-top {
             position: fixed;
             right: 16px;
@@ -616,7 +802,8 @@
                 margin: 0 auto;
             }
             .quote-layout,
-            .contact-grid {
+            .contact-grid,
+            .pay-layout {
                 grid-template-columns: 1fr;
             }
             nav ul {
@@ -625,6 +812,9 @@
             }
             .nav-inner {
                 padding-inline: 12px;
+            }
+            .nav-cta {
+                display: none;
             }
         }
 
@@ -641,19 +831,32 @@
             .quote-form {
                 grid-template-columns: 1fr;
             }
+            .top-bar-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
         }
     </style>
-    <!-- Injected favicon + preload -->
-    <link rel="icon" href="assets/favicon.ico">
-    <link rel="preload" as="image" href="assets/eliteride-logo-256.png">
 </head>
 <body>
+
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <span><strong>24/7</strong> Executive SUV service • Fairfield County · Westchester · NYC Airports</span>
+        <div class="top-bar-actions">
+            <a class="top-bar-link" href="tel:+14752661458">Call: (475) 266-1458</a>
+            <a class="top-bar-link" href="mailto:eliterideconnect@gmail.com">Email Us</a>
+            <a class="top-bar-cta" href="#contact">Book Now</a>
+        </div>
+    </div>
+</div>
+
 <header>
     <div class="nav-inner">
         <div class="logo-wrap">
-            <!-- Replaced with picture for WebP + PNG fallback -->
             <picture>
-                <source srcset="assets/eliteride-logo-256.webp" type="image/webp">
+                <source srcset="assets/eliteride-logo-256.webp" type="image/webp" />
                 <img src="assets/eliteride-logo-256.png" alt="EliteRide LLC logo" />
             </picture>
             <div class="logo-text">EliteRide · Executive Chauffeur</div>
@@ -664,36 +867,71 @@
                 <li><a href="#fleet">Fleet</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#rates">Rates</a></li>
-                <li><a href="#contact">Booking</a></li>
+                <li><a href="#areas">Service Area</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#pay">Pay Now</a></li>
                 <li><a href="#policies">Policies</a></li>
             </ul>
         </nav>
+        <a href="#contact" class="nav-cta">Book Now</a>
     </div>
 </header>
 
 <section class="hero" id="hero">
     <div class="hero-inner">
         <div class="hero-main">
-            <div class="hero-kicker">Fairfield County · Westchester · NYC Airports</div>
-            <h1>Your <span>Elite Ride</span> To Every Destination</h1>
+            <div class="hero-kicker">Private Black SUV · Norwalk, CT</div>
+            <div class="hero-badges">
+                <div class="hero-badge">Airport · Corporate · Events</div>
+                <div class="hero-badge">JFK • LGA • EWR • HPN • BDL</div>
+            </div>
+            <h1>Professional <span>Executive SUV</span> Service You Can Depend On</h1>
             <p class="hero-subtitle">
-                EliteRide LLC provides luxury executive SUV transportation for airport transfers, corporate travel,
-                weddings, and private occasions. Discreet, punctual, and professional every mile of the way.
+                EliteRide LLC provides discreet, on-time black SUV service for airport transfers, corporate travel,
+                medical and family trips, weddings, and private occasions across Connecticut, Westchester, and NYC Metro.
             </p>
             <div class="hero-actions">
                 <button class="btn-primary" type="button" onclick="scrollToId('rates')">Get Instant Fare</button>
                 <button class="btn-ghost" type="button" onclick="scrollToId('contact')">Request a Booking</button>
+                <button class="btn-ghost" type="button" onclick="window.location.href='tel:+14752661458'">Call Now</button>
             </div>
             <div class="hero-meta">
-                <strong>24/7</strong> availability · Professional chauffeur · Insured & LLC registered
+                <strong>Fully insured</strong> · LLC registered · Professional chauffeur · Clean, non-smoking vehicle
             </div>
         </div>
 
         <div class="hero-image-wrap">
-            <!-- Replace 'suburban.jpg' with your own image filename or a direct URL -->
-            <img src="suburban.jpg" alt="Black Suburban executive SUV" />
+            <!-- Hero image: replace with your best fleet photo -->
+            <img src="assets/fleet1.jpg" alt="EliteRide executive black SUV" loading="lazy" decoding="async" />
             <div class="hero-image-overlay"></div>
             <div class="hero-image-tag">Executive Black SUV · EliteRide LLC</div>
+        </div>
+    </div>
+</section>
+
+<!-- 3-step booking strip -->
+<section class="steps-strip">
+    <div class="steps-inner">
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <div>
+                <div class="step-body-title">Share Your Trip</div>
+                <div class="step-body-text">Send pickup, drop-off, date, and time using the booking form, text, or email.</div>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div>
+                <div class="step-body-title">Confirm Fare & Details</div>
+                <div class="step-body-text">You receive a clear written quote with pickup window and any wait-time options.</div>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <div>
+                <div class="step-body-title">Ride In Comfort</div>
+                <div class="step-body-text">Your driver arrives on time in a clean, black SUV with professional conduct.</div>
+            </div>
         </div>
     </div>
 </section>
@@ -709,30 +947,28 @@
         <div class="grid grid-2">
             <div class="card">
                 <div class="fleet-image">
-                    <!-- Replace 'suburban.jpg' with your actual file name or URL -->
-                    <img src="suburban.jpg" alt="Black Chevy Suburban for EliteRide" />
+                    <img src="assets/fleet1.jpg" alt="Black Chevy Suburban for EliteRide" loading="lazy" decoding="async" />
                     <div class="fleet-image-label">Chevy Suburban · Executive SUV</div>
                 </div>
                 <div style="margin-top:10px;">
                     <div class="card-title">Chevy Suburban</div>
                     <div class="card-text">
                         Spacious seating, generous luggage capacity, and a smooth ride. Ideal for airport transfers,
-                        corporate groups, and small families traveling in style.
+                        corporate groups, and families traveling in style and comfort.
                     </div>
                 </div>
             </div>
 
             <div class="card">
                 <div class="fleet-image">
-                    <!-- Replace 'escalade.jpg' with your actual file name or URL -->
-                    <img src="escalade.jpg" alt="Black Cadillac Escalade for EliteRide" />
+                    <img src="assets/fleet2.jpg" alt="Black Cadillac Escalade for EliteRide" loading="lazy" decoding="async" />
                     <div class="fleet-image-label">Cadillac Escalade · Luxury SUV</div>
                 </div>
                 <div style="margin-top:10px;">
-                    <div class="card-title">Cadillac Escalade (on request)</div>
+                    <div class="card-title">Cadillac Escalade (On Request)</div>
                     <div class="card-text">
-                        For select bookings and special events, we can arrange Escalade-level luxury, subject to
-                        availability and advance notice. Perfect for weddings and VIP clientele.
+                        For select bookings and special events, Escalade-level luxury is available with advance notice.
+                        Perfect for weddings, VIP guests, and high-profile travel.
                     </div>
                 </div>
             </div>
@@ -740,6 +976,7 @@
     </div>
 </section>
 
+<!-- Why Choose Us -->
 <section class="section" id="services">
     <div class="section-inner">
         <h2 class="section-title">Executive & <span>Private</span> Services</h2>
@@ -797,6 +1034,31 @@
                     Perfect for executive teams and recurring airport or office shuttles.
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service areas -->
+<section class="section" id="areas">
+    <div class="section-inner">
+        <h2 class="section-title">Primary <span>Service Area</span></h2>
+        <p class="section-subtitle">
+            Based in Norwalk, CT and serving Fairfield County, Westchester, NYC Metro, New Jersey, and select New England routes.
+            If your trip is safe and reasonable in distance, EliteRide will quote it.
+        </p>
+
+        <div class="pill-row">
+            <div class="pill">Norwalk</div>
+            <div class="pill">Stamford</div>
+            <div class="pill">Greenwich</div>
+            <div class="pill">Darien</div>
+            <div class="pill">Fairfield</div>
+            <div class="pill">Westport</div>
+            <div class="pill">New Canaan</div>
+            <div class="pill">Westchester County</div>
+            <div class="pill">NYC & Boroughs</div>
+            <div class="pill">NJ (select routes)</div>
+            <div class="pill">New England (by quote)</div>
         </div>
     </div>
 </section>
@@ -863,9 +1125,109 @@
                     in the booking form and we’ll provide a custom flat-rate quote.
                 </p>
                 <div class="booking-help">
-                    We regularly serve clients across Connecticut, Westchester, NYC, New Jersey, and New England.
-                    If your trip is safe and reasonable in distance, we will quote it.
+                    EliteRide regularly serves clients across Connecticut, Westchester, NYC, New Jersey, and New England.
+                    If your trip is safe and reasonable in distance, a quote will be provided.
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews -->
+<section class="section" id="reviews">
+    <div class="section-inner">
+        <h2 class="section-title">Client <span>Reviews</span></h2>
+        <p class="section-subtitle">
+            A few words from repeat travelers and families who trust EliteRide for their airport runs,
+            special events, and important appointments.
+        </p>
+
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="card-pill">Airport · JFK</div>
+                <div class="review-quote">
+                    “On-time, professional, and patient with our delayed flight. Smooth ride from JFK to Norwalk.
+                    We book EliteRide for every business trip now.”
+                </div>
+                <div class="review-author">— Corporate traveler, Norwalk</div>
+            </div>
+            <div class="card">
+                <div class="card-pill">Family & Medical</div>
+                <div class="review-quote">
+                    “Reliable and respectful for my mom’s medical appointments. Clear communication, safe driving,
+                    and no stress about parking or traffic.”
+                </div>
+                <div class="review-author">— Daughter of client, Stamford</div>
+            </div>
+            <div class="card">
+                <div class="card-pill">Wedding Day</div>
+                <div class="review-quote">
+                    “The black SUV looked perfect in our photos and our driver was extremely professional.
+                    He handled timing and traffic so we could just enjoy the day.”
+                </div>
+                <div class="review-author">— Wedding couple, Fairfield County</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pay Now / Zelle -->
+<section class="section" id="pay">
+    <div class="section-inner">
+        <h2 class="section-title">Pay <span>Now</span></h2>
+        <p class="section-subtitle">
+            EliteRide accepts secure, cashless payments via <strong>Zelle</strong>. Use the details below to
+            send your deposit or full fare once your trip is confirmed in writing.
+        </p>
+
+        <div class="pay-layout">
+            <div class="payment-box">
+                <div class="payment-title">Zelle Payment Details</div>
+                <p>
+                    💳 <span class="payment-highlight">Zelle email:</span>
+                    <span id="zelle-email">eliterideconnect@gmail.com</span>
+                </p>
+                <p>
+                    💼 <span class="payment-highlight">Account name:</span> EliteRide LLC
+                </p>
+                <p>
+                    🌐 <span class="payment-highlight">Notes:</span> Include your <strong>full name</strong> and
+                    <strong>trip date</strong> in the Zelle memo so we can match your payment quickly.
+                </p>
+
+                <div class="pay-actions">
+                    <button class="btn-primary btn-small" type="button" onclick="copyZelleEmail()">
+                        Copy Zelle Email
+                    </button>
+                    <button class="btn-ghost btn-small" type="button" onclick="scrollToId('contact')">
+                        Confirm Trip Details
+                    </button>
+                </div>
+
+                <div class="pay-note">
+                    Payments should be sent only <strong>after</strong> your fare and trip details are confirmed
+                    by text or email. A booking is considered confirmed once payment is received or terms are agreed
+                    in writing.
+                </div>
+            </div>
+
+            <div class="pay-list">
+                <h3 style="margin-top:0; margin-bottom:8px; color:var(--accent-soft); font-size:1.02rem;">
+                    How To Pay With Zelle
+                </h3>
+                <ol>
+                    <li>Open your banking app or Zelle app on your phone.</li>
+                    <li>Select <strong>“Send”</strong> and enter the Zelle email:
+                        <strong>eliterideconnect@gmail.com</strong>.</li>
+                    <li>Enter the <strong>exact amount</strong> quoted to you for your trip.</li>
+                    <li>In the memo, add: <strong>“EliteRide – [Your Name] – [Trip Date]”</strong>.</li>
+                    <li>Submit the payment. You will receive a confirmation from your bank and a written
+                        confirmation from EliteRide once it is received.</li>
+                </ol>
+                <p class="pay-note">
+                    If you have any questions before sending payment, please text or call
+                    <a href="tel:+14752661458" style="color:var(--accent-soft); text-decoration:underline;">(475) 266-1458</a>.
+                </p>
             </div>
         </div>
     </div>
@@ -885,8 +1247,8 @@
                     EliteRide LLC – Norwalk, CT
                 </h3>
                 <div class="contact-details">
-                    <p><strong>Phone:</strong> (475) 266-1458</p>
-                    <p><strong>Email:</strong> eliterideconnect@gmail.com</p>
+                    <p><strong>Phone:</strong> <a href="tel:+14752661458">(475) 266-1458</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:eliterideconnect@gmail.com">eliterideconnect@gmail.com</a></p>
                     <p><strong>Website:</strong> www.eliteridect.com</p>
                     <p><strong>Service Area:</strong> Fairfield County, Westchester, NYC Metro, NJ & select New England routes</p>
                 </div>
@@ -894,21 +1256,14 @@
                     Corporate accounts and repeat traveler arrangements are available upon request.
                 </p>
 
-                <!-- Payment Options (Zelle) -->
                 <div class="payment-box">
-                    <div class="payment-title">Payment Options</div>
+                    <div class="payment-title">Payment Reminder</div>
                     <p>
-                        We currently accept payments via
-                        <span class="payment-highlight">Zelle</span>.
-                    </p>
-                    <p>
-                        📧 <span class="payment-highlight">Zelle email:</span> eliterideconnect@gmail.com
-                    </p>
-                    <p>
-                        💼 <span class="payment-highlight">Account name:</span> EliteRide LLC
+                        All trips must be confirmed in writing before payment is sent. Once your trip and fare are confirmed,
+                        you can pay securely via <span class="payment-highlight">Zelle</span> using
+                        <span class="payment-highlight">eliterideconnect@gmail.com</span>.
                     </p>
                     <p style="margin-top:6px;">
-                        Once your trip and fare are confirmed, you will receive payment instructions.
                         Bookings are considered confirmed only after payment is received or otherwise
                         agreed in writing.
                     </p>
@@ -1166,10 +1521,36 @@
             "",
             "Sent from EliteRide website booking form."
         ];
-        const body = encodeURIComponent(bodyLines.join("
-"));
+        const body = encodeURIComponent(bodyLines.join("\n"));
 
         window.location.href = `mailto:eliterideconnect@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    function copyZelleEmail() {
+        const email = "eliterideconnect@gmail.com";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(function () {
+                alert("Zelle email copied: " + email);
+            }, function () {
+                fallbackCopyText(email);
+            });
+        } else {
+            fallbackCopyText(email);
+        }
+    }
+
+    function fallbackCopyText(text) {
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+            document.execCommand("copy");
+            alert("Zelle email copied: " + text);
+        } catch (e) {
+            alert("Zelle email: " + text);
+        }
+        document.body.removeChild(temp);
     }
 
     // Back to top button behavior
