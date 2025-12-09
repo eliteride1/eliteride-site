@@ -12,11 +12,25 @@
 
   <style>
     :root{
-      --bg-dark:#050505;--bg-card:#101010;--accent:#d4af37;--accent-soft:#f4d48c;
-      --text-main:#f7f7f7;--muted:#a0a0a0;
+      --bg-dark:#050505;
+      --bg-card:#101010;
+      --accent:#d4af37;
+      --accent-soft:#f4d48c;
+      --text-main:#f7f7f7;
+      --muted:#a0a0a0;
     }
+
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;background:var(--bg-dark);color:var(--text-main);overflow-x:hidden;scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+      background:var(--bg-dark);
+      color:var(--text-main);
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
     a{color:inherit;text-decoration:none}
 
     /* Header / Nav */
@@ -28,7 +42,7 @@
       backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(212,175,55,.22);
       box-shadow:0 4px 16px rgba(212,175,55,0.25);
-      padding:12px 0; /* increased space */
+      padding:12px 0; /* taller header */
     }
 
     .nav-inner{
@@ -38,14 +52,20 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      min-height:100px; /* ensures balanced spacing */
+      min-height:100px; /* keeps logo + nav centered */
     }
 
-    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
     .logo-wrap img{
-      height:80px; /* larger logo */
+      height:80px;          /* BIGGER logo */
       border-radius:12px;
     }
+
     .logo-text{
       font-weight:700;
       letter-spacing:.08em;
@@ -79,6 +99,7 @@
       background:linear-gradient(90deg,var(--accent),var(--accent-soft));
       transition:width .25s ease;
     }
+
     nav ul li a:hover::after{width:100%}
 
     /* Hero */
@@ -91,13 +112,14 @@
       padding:84px 18px 40px;
       overflow:hidden;
     }
+
     .hero::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-      radial-gradient(circle at top left,rgba(212,175,55,.25),transparent 50%),
-      radial-gradient(circle at bottom right,rgba(212,175,55,.18),transparent 55%);
+        radial-gradient(circle at top left,rgba(212,175,55,.25),transparent 50%),
+        radial-gradient(circle at bottom right,rgba(212,175,55,.18),transparent 55%);
       opacity:.9;
     }
 
@@ -112,13 +134,40 @@
     }
 
     .hero-main{animation:fadeUp .9s ease forwards}
-    .hero-kicker{text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--accent-soft);margin-bottom:12px}
-    .hero h1{font-size:clamp(2.3rem,4vw,3.1rem);margin:0 0 14px;line-height:1.1}
-    .hero h1 span{color:var(--accent)}
-    .hero-subtitle{font-size:.98rem;color:var(--muted);max-width:520px;line-height:1.6;margin-bottom:22px}
 
-    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
-    .btn-primary,.btn-ghost{
+    .hero-kicker{
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      font-size:.72rem;
+      color:var(--accent-soft);
+      margin-bottom:12px;
+    }
+
+    .hero h1{
+      font-size:clamp(2.3rem,4vw,3.1rem);
+      margin:0 0 14px;
+      line-height:1.1;
+    }
+
+    .hero h1 span{color:var(--accent)}
+
+    .hero-subtitle{
+      font-size:.98rem;
+      color:var(--muted);
+      max-width:520px;
+      line-height:1.6;
+      margin-bottom:22px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .btn-primary,
+    .btn-ghost{
       border-radius:999px;
       padding:10px 20px;
       border:1px solid var(--accent);
@@ -131,15 +180,29 @@
       background:transparent;
       color:var(--accent-soft);
     }
+
     .btn-primary{
       background:linear-gradient(135deg,var(--accent),var(--accent-soft));
       color:#000;
       border:none;
     }
-    .btn-primary:hover{filter:brightness(1.03);transform:translateY(-1px);box-shadow:0 6px 22px rgba(0,0,0,.65)}
-    .btn-ghost:hover{background:rgba(212,175,55,.12);transform:translateY(-1px)}
 
-    .hero-meta{font-size:.8rem;color:var(--muted)}
+    .btn-primary:hover{
+      filter:brightness(1.03);
+      transform:translateY(-1px);
+      box-shadow:0 6px 22px rgba(0,0,0,.65);
+    }
+
+    .btn-ghost:hover{
+      background:rgba(212,175,55,.12);
+      transform:translateY(-1px);
+    }
+
+    .hero-meta{
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
     .hero-meta strong{color:var(--accent-soft)}
 
     .hero-image-wrap{
@@ -150,16 +213,372 @@
       box-shadow:0 20px 40px rgba(0,0,0,.85);
       animation:floatIn 1s ease forwards;
     }
-    .hero-image-wrap img{display:block;width:100%;height:100%;max-height:360px;object-fit:cover;filter:saturate(1.05)}
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes floatIn{from{opacity:0;transform:translateY(22px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .hero-image-wrap img{
+      display:block;
+      width:100%;
+      height:100%;
+      max-height:360px;
+      object-fit:cover;
+      filter:saturate(1.05);
+    }
+
+    .hero-image-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top right,rgba(0,0,0,.7),transparent 40%);
+    }
+
+    .hero-image-tag{
+      position:absolute;
+      left:14px;
+      bottom:14px;
+      background:rgba(0,0,0,.7);
+      border-radius:999px;
+      padding:6px 12px;
+      font-size:.78rem;
+      color:var(--accent-soft);
+      border:1px solid rgba(212,175,55,.4);
+    }
+
+    /* Sections */
+    section.section{padding:50px 18px;}
+
+    .section-inner{
+      max-width:1140px;
+      margin:0 auto;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:18px;
+      font-size:1.65rem;
+    }
+
+    .section-title span{color:var(--accent)}
+
+    .section-subtitle{
+      text-align:center;
+      font-size:.94rem;
+      color:var(--muted);
+      max-width:640px;
+      margin:0 auto 30px;
+    }
+
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+    .card{
+      background:var(--bg-card);
+      border-radius:18px;
+      padding:18px 18px 20px;
+      border:1px solid rgba(255,255,255,.06);
+      box-shadow:0 14px 35px rgba(0,0,0,.7);
+      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(212,175,55,.6);
+      box-shadow:0 18px 40px rgba(0,0,0,.9);
+    }
+
+    .card-title{
+      font-size:1.02rem;
+      margin-bottom:6px;
+      color:var(--accent-soft);
+    }
+
+    .card-pill{
+      display:inline-block;
+      padding:3px 8px;
+      border-radius:999px;
+      background:rgba(212,175,55,.12);
+      font-size:.75rem;
+      color:var(--accent-soft);
+      margin-bottom:8px;
+    }
+
+    .card-text{
+      font-size:.9rem;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    /* Fleet / gallery */
+    .fleet-image{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      height:220px;
+    }
+
+    .fleet-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .fleet-image-label{
+      position:absolute;
+      left:10px;
+      bottom:10px;
+      background:rgba(0,0,0,.7);
+      border-radius:999px;
+      padding:4px 10px;
+      font-size:.78rem;
+      color:var(--accent-soft);
+      border:1px solid rgba(212,175,55,.5);
+    }
+
+    /* Quote / Rates */
+    .quote-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+      gap:26px;
+      align-items:flex-start;
+    }
+
+    .quote-card,
+    .custom-card{
+      background:var(--bg-card);
+      border-radius:18px;
+      padding:18px 18px 20px;
+      border:1px solid rgba(255,255,255,.06);
+      box-shadow:0 14px 35px rgba(0,0,0,.7);
+    }
+
+    .quote-form{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .quote-form label{
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--muted);
+    }
+
+    .quote-form select{
+      width:100%;
+      margin-top:4px;
+      padding:9px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:#050505;
+      color:var(--text-main);
+      font-size:.9rem;
+    }
+
+    .quote-form select:focus{
+      outline:none;
+      border-color:var(--accent);
+    }
+
+    .quote-actions{
+      display:flex;
+      justify-content:flex-start;
+      gap:10px;
+      margin-top:6px;
+    }
+
+    .fare-display{
+      margin-top:10px;
+      font-size:.95rem;
+    }
+
+    .fare-display strong{color:var(--accent-soft)}
+
+    .fare-note{
+      font-size:.78rem;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    /* Contact / Booking */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      gap:26px;
+    }
+
+    .contact-details p{
+      font-size:.95rem;
+      color:var(--muted);
+      margin:4px 0;
+    }
+
+    .contact-details strong{color:var(--accent-soft)}
+
+    .booking-form{
+      display:grid;
+      gap:10px;
+    }
+
+    .booking-form label{
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--muted);
+    }
+
+    .booking-form input,
+    .booking-form textarea{
+      width:100%;
+      margin-top:4px;
+      padding:9px 10px;
+      border-radius:9px;
+      border:1px solid rgba(255,255,255,.16);
+      background:#050505;
+      color:var(--text-main);
+      font-size:.9rem;
+      resize:vertical;
+    }
+
+    .booking-form input:focus,
+    .booking-form textarea:focus{
+      outline:none;
+      border-color:var(--accent);
+    }
+
+    .booking-form textarea{min-height:70px;}
+
+    .booking-help{
+      font-size:.8rem;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    /* Payment box */
+    .payment-box{
+      margin-top:18px;
+      padding:14px 14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(212,175,55,.45);
+      background:radial-gradient(circle at top left,rgba(212,175,55,.16),rgba(5,5,5,.95));
+    }
+
+    .payment-title{
+      font-size:.95rem;
+      font-weight:600;
+      color:var(--accent-soft);
+      margin-bottom:6px;
+    }
+
+    .payment-box p{
+      font-size:.85rem;
+      color:var(--muted);
+      margin:3px 0;
+    }
+
+    .payment-highlight{
+      color:var(--accent-soft);
+      font-weight:600;
+    }
+
+    /* Policies */
+    .policies-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin-top:10px;
+    }
+
+    .policy-card{
+      background:var(--bg-card);
+      border-radius:16px;
+      padding:16px 16px 18px;
+      border:1px solid rgba(255,255,255,.08);
+      font-size:.86rem;
+      color:var(--muted);
+    }
+
+    .policy-card h3{
+      margin-top:0;
+      font-size:.98rem;
+      color:var(--accent-soft);
+      margin-bottom:6px;
+    }
+
+    .policy-card ul{
+      padding-left:18px;
+      margin:6px 0 0;
+    }
+
+    .policy-card li{margin-bottom:4px;}
+
+    .legal-note{
+      font-size:.75rem;
+      color:var(--muted);
+      margin-top:14px;
+    }
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:18px 18px 20px;
+      text-align:center;
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
+    footer span{color:var(--accent-soft);}
+    footer a{
+      color:var(--accent-soft);
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+    }
+
+    /* Back to top button */
+    .back-to-top{
+      position:fixed;
+      right:16px;
+      bottom:18px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.7);
+      background:rgba(0,0,0,.85);
+      color:var(--accent-soft);
+      font-size:.78rem;
+      cursor:pointer;
+      display:none;
+    }
+
+    .back-to-top.show{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+    }
+
+    /* Animations & responsive */
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(18px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes floatIn{
+      from{opacity:0;transform:translateY(22px) scale(.96);}
+      to{opacity:1;transform:translateY(0) scale(1);}
+    }
 
     @media (max-width:900px){
-      .hero-inner{grid-template-columns:1fr}
-      .hero-image-wrap{max-width:420px;margin:0 auto}
-      .nav-inner{flex-direction:column;gap:10px;min-height:auto}
-      .logo-wrap img{height:70px}
+      .hero-inner{grid-template-columns:1fr;}
+      .hero-image-wrap{max-width:420px;margin:0 auto;}
+      .quote-layout,.contact-grid{grid-template-columns:1fr;}
+      nav ul{gap:10px;font-size:.78rem;}
+      .nav-inner{flex-direction:column;gap:10px;min-height:auto;}
+      .logo-wrap img{height:70px;}
+    }
+
+    @media (max-width:640px){
+      .hero{padding-top:76px;}
+      .hero h1{font-size:2.1rem;}
+      .hero-subtitle{font-size:.9rem;}
+      .quote-form{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -178,6 +597,7 @@
       <ul>
         <li><a href="#hero">Home</a></li>
         <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#rates">Rates</a></li>
         <li><a href="#contact">Booking</a></li>
@@ -200,24 +620,463 @@
         <button class="btn-primary" type="button" onclick="scrollToId('rates')">Get Instant Fare</button>
         <button class="btn-ghost" type="button" onclick="scrollToId('contact')">Request a Booking</button>
       </div>
-      <div class="hero-meta"><strong>24/7</strong> availability · Professional chauffeur · Insured & LLC registered</div>
+      <div class="hero-meta">
+        <strong>24/7</strong> availability · Professional chauffeur · Insured & LLC registered
+      </div>
     </div>
 
     <div class="hero-image-wrap">
       <img src="assets/fleet1.jpg" alt="Black Suburban executive SUV" loading="lazy" decoding="async" />
+      <div class="hero-image-overlay"></div>
+      <div class="hero-image-tag">Executive Black SUV · EliteRide LLC</div>
     </div>
   </div>
 </section>
 
-<footer style="border-top:1px solid rgba(255,255,255,.08);padding:18px;text-align:center;font-size:.8rem;color:#a0a0a0;">
-  &copy; 2025 <span style="color:#d4af37;">EliteRide LLC</span>. All rights reserved.
+<section class="section" id="fleet">
+  <div class="section-inner">
+    <h2 class="section-title">Our <span>Fleet</span></h2>
+    <p class="section-subtitle">
+      Clean, spacious, blacked-out SUVs designed for comfort, privacy, and presence.
+    </p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="fleet-image">
+          <img src="assets/fleet1.jpg" alt="Black Chevy Suburban for EliteRide" loading="lazy" decoding="async" />
+          <div class="fleet-image-label">Chevy Suburban · Executive SUV</div>
+        </div>
+        <div style="margin-top:10px;">
+          <div class="card-title">Chevy Suburban</div>
+          <div class="card-text">
+            Spacious seating, generous luggage capacity, and a smooth ride. Ideal for airport transfers,
+            corporate groups, and small families traveling in style.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="fleet-image">
+          <img src="assets/fleet2.jpg" alt="Black Cadillac Escalade for EliteRide" loading="lazy" decoding="async" />
+          <div class="fleet-image-label">Cadillac Escalade · Luxury SUV</div>
+        </div>
+        <div style="margin-top:10px;">
+          <div class="card-title">Cadillac Escalade (on request)</div>
+          <div class="card-text">
+            For select bookings and special events, we can arrange Escalade-level luxury, subject to
+            availability and advance notice. Perfect for weddings and VIP clientele.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="section-inner">
+    <h2 class="section-title">Photo <span>Gallery</span></h2>
+    <p class="section-subtitle">
+      Swap these filenames with your screenshots in the <code>/assets</code> folder.
+    </p>
+
+    <div class="grid grid-3">
+      <div class="fleet-image">
+        <img src="assets/gallery-1.jpg" alt="EliteRide – Airport pickup" loading="lazy" decoding="async" />
+        <div class="fleet-image-label">Airport Pickup</div>
+      </div>
+      <div class="fleet-image">
+        <img src="assets/gallery-2.jpg" alt="EliteRide – Executive interior" loading="lazy" decoding="async" />
+        <div class="fleet-image-label">Executive Interior</div>
+      </div>
+      <div class="fleet-image">
+        <img src="assets/gallery-3.jpg" alt="EliteRide – Wedding day ride" loading="lazy" decoding="async" />
+        <div class="fleet-image-label">Wedding Day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-inner">
+    <h2 class="section-title">Executive & <span>Private</span> Services</h2>
+    <p class="section-subtitle">
+      Built for clients who expect more than a standard rideshare: quiet cabin, professional driver,
+      clear policies, and a seamless experience from first message to final drop-off.
+    </p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-pill">Business & Corporate</div>
+        <div class="card-title">Executive Transfers</div>
+        <div class="card-text">
+          Door-to-door transport for meetings, site visits, and client hospitality. Ideal for executives,
+          consultants, and VIP guests who value discretion and punctuality.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-pill">Airports</div>
+        <div class="card-title">Airport Runs</div>
+        <div class="card-text">
+          Non-stop service to JFK, LGA, EWR, HPN, and BDL. Flight monitoring, curbside pickup,
+          and clear communication.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-pill">Events</div>
+        <div class="card-title">Weddings & Special Occasions</div>
+        <div class="card-text">
+          Black-car style service for weddings, galas, and nights out. Coordination with planners
+          and venues, flexible wait time, and multi-stop itineraries on request.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-pill">Family</div>
+        <div class="card-title">Family & Medical Trips</div>
+        <div class="card-text">
+          Reliable non-emergency transport for medical visits, college drop-offs, and family travel days.
+          Professional boundaries always respected for your safety and comfort.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-pill">Custom Routes</div>
+        <div class="card-title">City-to-City Service</div>
+        <div class="card-text">
+          Custom flat-rate routes between Connecticut, Westchester, NYC, New Jersey, and nearby states.
+          Quotes provided in advance so you always know the price before you ride.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-pill">Private Clients</div>
+        <div class="card-title">Retainers & Corporate Accounts</div>
+        <div class="card-text">
+          Frequent travelers and companies can set up preferred billing and priority scheduling.
+          Perfect for executive teams and recurring airport or office shuttles.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rates">
+  <div class="section-inner">
+    <h2 class="section-title">Instant <span>Fare Estimate</span></h2>
+    <p class="section-subtitle">
+      Get a quick estimate for popular routes. For any city not listed here, request a custom quote
+      in the booking section below.
+    </p>
+
+    <div class="quote-layout">
+      <div class="quote-card">
+        <h3 style="margin-top:0;margin-bottom:10px;color:var(--accent-soft);font-size:1.02rem;">
+          Standard Routes (Instant Estimate)
+        </h3>
+        <form class="quote-form" onsubmit="event.preventDefault(); calculateFare();">
+          <div>
+            <label for="origin-select">Pickup city</label>
+            <select id="origin-select">
+              <option value="">Select city</option>
+              <option value="Norwalk">Norwalk</option>
+              <option value="Stamford">Stamford</option>
+              <option value="Greenwich">Greenwich</option>
+              <option value="Darien">Darien</option>
+              <option value="Fairfield">Fairfield</option>
+              <option value="Westport">Westport</option>
+              <option value="New Canaan">New Canaan</option>
+            </select>
+          </div>
+          <div>
+            <label for="destination-select">Destination</label>
+            <select id="destination-select">
+              <option value="">Select airport / city</option>
+              <option value="JFK">JFK Airport</option>
+              <option value="LGA">LaGuardia (LGA)</option>
+              <option value="EWR">Newark (EWR)</option>
+              <option value="HPN">Westchester (HPN)</option>
+              <option value="BDL">Bradley (BDL)</option>
+              <option value="Manhattan">Manhattan (Midtown)</option>
+            </select>
+          </div>
+        </form>
+        <div class="quote-actions">
+          <button class="btn-primary" type="button" onclick="calculateFare()">Show Fare</button>
+          <button class="btn-ghost" type="button" onclick="scrollToId('contact')">Book This Trip</button>
+        </div>
+        <div class="fare-display" id="fare-display">
+          Select a pickup city and destination to see your estimated fare.
+        </div>
+        <div class="fare-note">
+          Estimates are for standard executive SUV service and may adjust for extreme traffic,
+          extra stops, tolls, or extended wait time. Final price will be confirmed in writing.
+        </div>
+      </div>
+
+      <div class="custom-card">
+        <h3 style="margin-top:0;margin-bottom:10px;color:var(--accent-soft);font-size:1.02rem;">
+          Custom Routes (Any City)
+        </h3>
+        <p style="font-size:.9rem;color:var(--muted);margin-bottom:12px;">
+          Traveling from another city or to a non-airport destination? Enter your route details below
+          in the booking form and we’ll provide a custom flat-rate quote.
+        </p>
+        <div class="booking-help">
+          We regularly serve clients across Connecticut, Westchester, NYC, New Jersey, and New England.
+          If your trip is safe and reasonable in distance, we will quote it.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-inner">
+    <h2 class="section-title">Booking & <span>Contact</span></h2>
+    <p class="section-subtitle">
+      Share a few details and we’ll confirm your booking and final fare by email or text.
+      For time-sensitive travel, call or text directly.
+    </p>
+
+    <div class="contact-grid">
+      <div>
+        <h3 style="margin-top:0;margin-bottom:8px;color:var(--accent-soft);font-size:1.02rem;">
+          EliteRide LLC – Norwalk, CT
+        </h3>
+        <div class="contact-details">
+          <p><strong>Phone:</strong> (475) 266-1458</p>
+          <p><strong>Email:</strong> eliterideconnect@gmail.com</p>
+          <p><strong>Website:</strong> www.eliteridect.com</p>
+          <p><strong>Service Area:</strong> Fairfield County, Westchester, NYC Metro, NJ & select New England routes</p>
+        </div>
+        <p class="booking-help">
+          Corporate accounts and repeat traveler arrangements are available upon request.
+        </p>
+
+        <div class="payment-box">
+          <div class="payment-title">Payment Options</div>
+          <p>
+            We currently accept payments via
+            <span class="payment-highlight">Zelle</span>.
+          </p>
+          <p>
+            📧 <span class="payment-highlight">Zelle email:</span> eliterideconnect@gmail.com
+          </p>
+          <p>
+            💼 <span class="payment-highlight">Account name:</span> EliteRide LLC
+          </p>
+          <p style="margin-top:6px;">
+            Once your trip and fare are confirmed, you will receive payment instructions.
+            Bookings are considered confirmed only after payment is received or otherwise
+            agreed in writing.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <form class="booking-form" onsubmit="event.preventDefault(); sendBookingEmail();">
+          <label for="bk-name">Full name</label>
+          <input id="bk-name" type="text" placeholder="Your name" required />
+
+          <label for="bk-email">Email</label>
+          <input id="bk-email" type="email" placeholder="you@example.com" required />
+
+          <label for="bk-phone">Mobile number</label>
+          <input id="bk-phone" type="tel" placeholder="+1 (___) ___-____" required />
+
+          <label for="bk-pickup">Pickup city / address</label>
+          <input id="bk-pickup" type="text" placeholder="City, state, or full address" required />
+
+          <label for="bk-dropoff">Drop-off city / address</label>
+          <input id="bk-dropoff" type="text" placeholder="Airport, city, or venue" required />
+
+          <label for="bk-datetime">Date & time</label>
+          <input id="bk-datetime" type="text" placeholder="e.g. April 5, 6:00 AM" required />
+
+          <label for="bk-notes">Notes (flight #, passengers, luggage, etc.)</label>
+          <textarea id="bk-notes" placeholder="Optional, but helpful."></textarea>
+
+          <button class="btn-primary" type="submit">Send Booking Request</button>
+          <div class="booking-help">
+            This will open your email app with all details pre-filled to send to
+            <strong>eliterideconnect@gmail.com</strong>. You will receive written confirmation
+            and payment instructions.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="policies">
+  <div class="section-inner">
+    <h2 class="section-title">Policies & <span>Terms</span></h2>
+    <p class="section-subtitle">
+      Clear policies protect both our clients and our driver. By booking with EliteRide LLC, you agree
+      to the following key terms and professional boundaries.
+    </p>
+
+    <div class="policies-grid">
+      <div class="policy-card">
+        <h3>Bookings & Confirmations</h3>
+        <ul>
+          <li>All trips must be booked and confirmed in writing (email or text).</li>
+          <li>A trip is considered <strong>confirmed</strong> once fare and details are agreed and
+            payment is received or terms are agreed in writing.</li>
+          <li>EliteRide LLC reserves the right to decline any trip that is unsafe, unlawful, or outside
+            of our reasonable service area.</li>
+        </ul>
+      </div>
+
+      <div class="policy-card">
+        <h3>Cancellation & No-Show Policy</h3>
+        <ul>
+          <li>Cancellations made <strong>24 hours or more</strong> before the scheduled pickup time:
+            no cancellation fee (full refund of prepaid amounts).</li>
+          <li>Cancellations made <strong>within 24 hours</strong> of pickup may be charged
+            <strong>50% of the quoted fare</strong>.</li>
+          <li>Cancellations made <strong>within 2 hours</strong> of pickup or
+            <strong>no-shows</strong> at pickup location may be charged
+            <strong>100% of the quoted fare</strong>.</li>
+          <li>No-show is defined as the passenger not arriving within 30 minutes of scheduled pickup
+            time and not responding to phone/text.</li>
+        </ul>
+      </div>
+
+      <div class="policy-card">
+        <h3>Wait Time & Extra Stops</h3>
+        <ul>
+          <li>Reasonable wait time at pickup is included (typically up to 15 minutes for local trips and
+            up to 45 minutes for airport arrivals after actual landing time).</li>
+          <li>Additional wait time may be billed at an hourly or per-15-minute rate, disclosed in advance
+            when possible.</li>
+          <li>Extra stops or route changes not agreed in advance may result in adjusted pricing.</li>
+        </ul>
+      </div>
+
+      <div class="policy-card">
+        <h3>Professional Boundaries & Conduct</h3>
+        <ul>
+          <li>EliteRide operates with strict professional boundaries: no illegal activity, harassment,
+            or unsafe behavior is tolerated.</li>
+          <li>The driver may end a trip immediately if a passenger’s behavior is threatening, abusive,
+            or violates law or safety rules; fares may still be due in full.</li>
+          <li>Open containers of alcohol, smoking, vaping, or drug use in the vehicle are not permitted
+            where prohibited by law.</li>
+          <li>All passengers must wear seat belts at all times where required by law.</li>
+        </ul>
+      </div>
+
+      <div class="policy-card">
+        <h3>Liability & Disclaimer</h3>
+        <ul>
+          <li>EliteRide LLC takes reasonable measures for safety but cannot be responsible for delays
+            caused by traffic, weather, road conditions, or events beyond our control.</li>
+          <li>Lost or forgotten items will be handled with care but EliteRide LLC is not liable for
+            unattended belongings left in the vehicle.</li>
+          <li>Nothing on this website constitutes legal or tax advice. Clients are responsible for
+            complying with their own company travel policies.</li>
+        </ul>
+      </div>
+
+      <div class="policy-card">
+        <h3>General Terms</h3>
+        <ul>
+          <li>By booking a trip, the client agrees to these policies and any additional written
+            terms provided in the confirmation message.</li>
+          <li>EliteRide LLC may update these policies periodically; the most current version will always
+            appear on this page.</li>
+          <li>For questions about terms or special arrangements, please contact us before booking.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal-note">
+      <strong>Note:</strong> These policies are provided as general business terms. For formal legal advice
+      or state-specific requirements, please consult an attorney or compliance professional.
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 <span>EliteRide LLC</span>. All rights reserved. Site: <a href="https://eliteridect.com">eliteridect.com</a>
 </footer>
 
+<button class="back-to-top" id="backToTop" onclick="scrollToId('hero')">↑ Top</button>
+
 <script>
+  const fareTable={
+    "Norwalk":{"JFK":226,"LGA":210,"EWR":233,"HPN":137,"BDL":239,"Manhattan":215},
+    "Stamford":{"JFK":211,"LGA":189,"EWR":210,"HPN":126,"BDL":233,"Manhattan":199},
+    "Greenwich":{"JFK":203,"LGA":186,"EWR":202,"HPN":119,"BDL":225,"Manhattan":189},
+    "Darien":{"JFK":219,"LGA":204,"EWR":224,"HPN":132,"BDL":237,"Manhattan":209},
+    "Fairfield":{"JFK":229,"LGA":215,"EWR":237,"HPN":141,"BDL":245,"Manhattan":225},
+    "Westport":{"JFK":233,"LGA":219,"EWR":241,"HPN":145,"BDL":249,"Manhattan":229},
+    "New Canaan":{"JFK":221,"LGA":207,"EWR":229,"HPN":135,"BDL":241,"Manhattan":215}
+  };
+
+  function calculateFare(){
+    const origin=document.getElementById("origin-select").value;
+    const destination=document.getElementById("destination-select").value;
+    const display=document.getElementById("fare-display");
+
+    if(!origin||!destination){
+      display.innerHTML="Please select both pickup city and destination.";
+      return;
+    }
+
+    const cityTable=fareTable[origin];
+    if(!cityTable || typeof cityTable[destination]==="undefined"){
+      display.innerHTML="This route is custom priced. Please use the booking form and we’ll confirm your fare.";
+      return;
+    }
+
+    const amount=cityTable[destination];
+    display.innerHTML=`Estimated fare from <strong>${origin}</strong> to <strong>${destination}</strong>: <span style="color:#fff;font-weight:600;">$${amount.toFixed(0)}</span>`;
+  }
+
   function scrollToId(id){
     const el=document.getElementById(id);
     if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
   }
+
+  function sendBookingEmail(){
+    const name=document.getElementById("bk-name").value.trim();
+    const email=document.getElementById("bk-email").value.trim();
+    const phone=document.getElementById("bk-phone").value.trim();
+    const pickup=document.getElementById("bk-pickup").value.trim();
+    const dropoff=document.getElementById("bk-dropoff").value.trim();
+    const datetime=document.getElementById("bk-datetime").value.trim();
+    const notes=document.getElementById("bk-notes").value.trim();
+
+    if(!name||!email||!phone||!pickup||!dropoff||!datetime){
+      alert("Please fill in all required fields before sending your request.");
+      return;
+    }
+
+    const subject=encodeURIComponent("EliteRide Booking Request");
+    const bodyLines=[
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      "",
+      `Pickup: ${pickup}`,
+      `Drop-off: ${dropoff}`,
+      `Date & Time: ${datetime}`,
+      "",
+      notes?`Notes: ${notes}`:"",
+      "",
+      "Sent from EliteRide website booking form."
+    ];
+    const body=encodeURIComponent(bodyLines.join("\n"));
+    window.location.href=`mailto:eliterideconnect@gmail.com?subject=${subject}&body=${body}`;
+  }
+
+  const backToTopBtn=document.getElementById("backToTop");
+  window.addEventListener("scroll",()=>{
+    if(window.scrollY>400){
+      backToTopBtn.classList.add("show");
+    }else{
+      backToTopBtn.classList.remove("show");
+    }
+  });
 </script>
 
 </body>
